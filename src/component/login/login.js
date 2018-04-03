@@ -39,14 +39,15 @@ class Login extends Component {
         let userName = this.state.userName;
         let pass = this.state.password;
 
-        axios.get('../login.json')
+        axios.post('api/login',{
+          userName: userName,
+          password: pass
+        })
           .then( (response) => {
             console.log(response);
-            if(response.data.name ==userName && response.data.password == pass){
+        
             this.setState({redirect: true});
-            }else{
-                this.setState({redirect: false});     
-            }
+           
           })
           
       }

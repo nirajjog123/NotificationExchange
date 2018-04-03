@@ -29,15 +29,21 @@ class Register extends Component {
         event.preventDefault();
         this.setState({register_user: true});
 
-        // axios.get('../login.json')
-        // .then( (response) => {
-        //   console.log(response);
-        //   if(response.data.name ==userName && response.data.password == pass){
-        //   this.setState({redirect: true});
-        //   }else{
-        //       this.setState({redirect: false});     
-        //   }
-        // })
+        let userName = this.state.userName;
+        let pass = this.state.password;
+        let mobileNumber = this.state.mobileNo;
+
+        axios.post('api/register',{
+          userName: userName,
+          password: pass,
+          mobileNo: mobileNumber
+        })
+          .then( (response) => {
+            console.log(response);
+        
+            this.setState({redirect: true});
+           
+          })
 
        
       }
