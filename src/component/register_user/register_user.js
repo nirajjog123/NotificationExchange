@@ -52,39 +52,47 @@ class Register extends Component {
     render() {
         const { register_user } = this.state
     return (
-        <div className="login">
-     
-        <div className="heading">
-          <h2>Register User</h2>
-          <form onSubmit={this.handleSubmit}>
-      
-                  <div className="input-group input-group-lg">
-                      <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                      <input type="text" className="form-control" name="userName" id='username' required  
+        <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <form onSubmit={this.handleSubmit}>
+          
+          <div class="form-group">
+            <label >UserName or Email address</label>
+            <input class="form-control"  type="text" name="userName" id='username' required  
                       placeholder="Username or email" onChange={this.handleChange}/>
-                      </div>
-      
-                      <div className="input-group input-group-lg">
-                      <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                      <input type="password" className="form-control" name="password" id="password"
-                        placeholder="Password" onChange={this.handleChange} required/>
-                      <input type="password" className="form-control" name="re-password" id="re-password" required
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label >Password</label>
+                <input class="form-control" name="re-password" id="re-password" required
                        placeholder="Re-enter Password" onChange={this.handleChange}/>
-                      <input type="text" className="form-control" name="mobileNo" id="mobileNo" required
+              </div>
+              <div class="col-md-6">
+                <label for="exampleConfirmPassword">Confirm password</label>
+                <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label >Mobile No</label>
+            <input class="form-control"  name="mobileNo" id="mobileNo" required
                        placeholder="enter mobile no" onChange={this.handleChange}/>
-                      </div>
-      
-                      
-                      <button type='submit' className="float">Register</button>
-      
-                      {register_user &&
-                          <Redirect to = {{pathname:'/dashboard'}}/>}
-                   
-              
-      
-          </form>
-               </div>
-       </div>
+          </div>
+          <button type='submit' className="btn btn-primary btn-block">Register</button>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="#">Login Page</a>
+          <a class="d-block small" href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+    {register_user &&
+    <Redirect to = {{pathname:'/dashboard'}}/>}
+  </div>
     );
   }
 }

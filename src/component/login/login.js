@@ -56,38 +56,46 @@ class Login extends Component {
         const { redirect } = this.state
         const { signup } = this.state
       return (
-        <div className="login">
-     
-  <div className="heading">
-    <h2>Sign in</h2>
-    <form onSubmit={this.handleSubmit.bind(this)}>
-
-            <div className="input-group input-group-lg">
-                <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                <input type="text" className="form-control" name="userName" required   
-                placeholder="Username or email" onChange={this.handleChange}/>
-                </div>
-
-                <div className="input-group input-group-lg">
-                <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                <input type="password" className="form-control" name="password"  required 
-                 placeholder="Password" onChange={this.handleChange}/>
-                </div>
-
-                <button type="submit" className="float">Login</button>
-                <button  className="float" onClick={this.handleCheck.bind(this)}>Sign Up</button>
-                
-                {redirect &&
+        <div className='bg-dark'>
+        <body >
+        <div class="container"> 
+    <div className="card card-login mx-auto mt-5">
+      <div className="card-header">Login</div>
+      <div className="card-body">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input className="form-control" id="exampleInputEmail1" type="email" 
+                aria-describedby="emailHelp" name="userName" required   
+                placeholder="Username or email" onChange={this.handleChange} />
+          </div>
+          <div className="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input className="form-control" id="exampleInputPassword1" type="password" name="password"  required 
+                 placeholder="Password" onChange={this.handleChange} />
+          </div>
+          <div className="form-group">
+            <div className="form-check">
+              <label className="form-check-label">
+                <input className="form-check-input" type="checkbox" /> Remember Password</label>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-primary btn-block">Login</button>
+        </form>
+        <div className="text-center">
+        <a  className="d-block small mt-3" onClick={this.handleCheck.bind(this)}>Sign Up</a>
+        </div>
+        {redirect &&
                     <Redirect to = {{pathname:'/dashboard'}}/>}
 
                 {signup &&
                     <Redirect to = {{pathname:'/register'}}/>}
-             
-        
-
-    </form>
- 		</div>
- </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  </div>
+ 
         
       );
     }
