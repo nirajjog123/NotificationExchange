@@ -5,6 +5,8 @@ class Dashboard extends Component {
   
     render() {
     return (
+      <div>
+      
       <div class="content-wrapper">
     <div class="container-fluid">
       
@@ -52,6 +54,7 @@ class Dashboard extends Component {
       </div>
     </div>
   
+  </div>
   </div>
     );
   }
