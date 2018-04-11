@@ -27,8 +27,11 @@ class email_msg_configure extends Component {
         let from = this.state.from;
         let sub = this.state.subject;
         let message = this.state.msg;
+        let config = {
+            headers: {'authorization': localStorage.getItem('tokenId')}
+          };
 
-        axios.post('template/email',{
+        axios.post('api/template/email',{
             emailTemplate: {
                         fromEmailAddress: from,
                         subject: sub,
@@ -36,7 +39,7 @@ class email_msg_configure extends Component {
                             },
             tenantId:123,
           templateName:'demoTemplate'
-        })
+        },config)
           .then( (response) => {
             console.log(response);
         

@@ -67,7 +67,7 @@ class Register extends Component {
             <div class="form-row">
               <div class="col-md-6">
                 <label >Password</label>
-                <input class="form-control" name="re-password" id="re-password" required
+                <input class="form-control" name="password" type="password" required
                        placeholder="Re-enter Password" onChange={this.handleChange}/>
               </div>
               <div class="col-md-6">

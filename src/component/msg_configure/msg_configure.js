@@ -8,7 +8,9 @@ class msg_configure extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {sms: false,
+        this.state = {
+                      template:'',
+                      sms: false,
                       email:false,
                       queue:false
                     };

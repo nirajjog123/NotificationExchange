@@ -38,16 +38,18 @@ class Login extends Component {
         
         let userName = this.state.userName;
         let pass = this.state.password;
-
+        
         axios.post('api/login',{
           userName: userName,
           password: pass
-        })
+        },
+        )
           .then( (response) => {
             console.log(response);
         
             this.setState({redirect: true});
-           
+            let tokenKey= response.headers.authorization;
+            localStorage.setItem('tokenId',tokenKey);
           })
           
       }
@@ -65,7 +67,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input className="form-control" id="exampleInputEmail1" type="email" 
+            <input className="form-control" id="exampleInputEmail1"  
                 aria-describedby="emailHelp" name="userName" required   
                 placeholder="Username or email" onChange={this.handleChange} />
           </div>

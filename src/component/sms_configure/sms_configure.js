@@ -22,12 +22,14 @@ class sms_msg_configure extends Component {
         event.preventDefault();
         this.setState({from: true});
         let msg = this.state.msg;
-
-        axios.post('template/sms',{
+        let config = {
+            headers: {'authorization': localStorage.getItem('tokenId')}
+          };
+        axios.post('api/template/sms',{
             smsTemplate: {message:msg},
             tenantId:123,
           templateName:'demoTemplate'
-        })
+        },config)
           .then( (response) => {
             console.log(response);
         
@@ -44,7 +46,8 @@ class sms_msg_configure extends Component {
         
           <div className="form-group">
             <label >Message</label>
-            <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" onChange={this.handleChange} />
+            <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
+            onChange={this.handleChange} />
           </div>
           <button type="submit" className="btn btn-primary">Save</button>
           <button  className="btn btn-primary">Cancel</button>
