@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import SMSMessage from '../sms_configure/sms_configure'
-import EmailMessage from '../email_configure/email_configure'
-import QueueMessage from '../queue_configure/queue_configure'
+import Sms_msg_configure from '../sms_configure/sms_configure'
+import Email_msg_configure from '../email_configure/email_configure'
+import Queue_msg_configure from '../queue_configure/queue_configure'
 
 
 class msg_configure extends Component {
@@ -43,9 +43,9 @@ class msg_configure extends Component {
       </div>
 
       <div id='message'>
-      {sms && <SMSMessage/>}
-      {email && <EmailMessage/>}
-      {queue && <QueueMessage/>}
+      {sms && <Sms_msg_configure/>}
+      {email && <Email_msg_configure/>}
+      {queue && <Queue_msg_configure/>}
       </div>
       </div>
     );

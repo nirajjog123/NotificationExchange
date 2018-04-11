@@ -6,6 +6,10 @@ import Graph from './component/graph/graph'
 import Message from './component/msg_configure/msg_configure'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+// import 'bootstrap/js/dist/dropdown.js';
+
 
 class App extends Component {
   render() {

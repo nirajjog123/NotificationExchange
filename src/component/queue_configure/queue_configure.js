@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 
 
-class queue_msg_configure extends Component {
+class Queue_msg_configure extends Component {
     render() {
        
     return (
@@ -12,4 +12,4 @@ class queue_msg_configure extends Component {
   }
 }
 
-export default queue_msg_configure;
+export default Queue_msg_configure;
