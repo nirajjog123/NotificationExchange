@@ -20,3 +20,32 @@ body{
 .margin-t-60{margin-top:60px;}
 .margin-b-20{margin-bottom:20px;}
 .margin-b-60{margin-bottom:60px;}
+.margin-b-30{margin-bottom:30px;}
+.margin-t-30{margin-top:30px;}
+.margin-r-20{margin-right:20px;}
+.margin-t-55{margin-top:55px;}
+.margin-t-95{margin-top:95px;}
+
+.msgconfig .msgbtn{
+  background: #343A40;
+  border:none;
+  outline: none;
+  color: #fff;
+}
+.msgconfig .msgbtn:hover{
+  background: #545b62;
+  border:none;
+  outline: none;
+  color: #fff;
+}
+.msgconfig  .graybkg{
+  background: #343A40;
+  height: 600px;
+}
+.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn{
+  width: 100px;
+  background: #343A40;
+  color: #fff;
+}
+
+

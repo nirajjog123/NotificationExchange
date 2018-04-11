@@ -1,12 +1,12 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
 
 class Queue_msg_configure extends Component {
-    render() {
-       
+  render() {
+
     return (
-        <div className="dashboard-component container">
-       queue page
+      <div className="margin-t-30 queue">
+        queue page
       </div>
     );
   }
