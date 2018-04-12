@@ -1,15 +1,23 @@
 import React from "react";
 import { Component } from "react";
+import { router,Redirect,Route } from 'react-router'
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      notification: false
     };
+    this.onMessageClick = this.onMessageClick.bind(this);
   }
-
+  onMessageClick() {
+    alert("aa");
+    this.setState({
+      notification: true
+    })
+  }
   render() {
+    const {notification} = this.state;
     return (
       <div className="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -20,18 +28,8 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                {/* <a className="nav-link" data-toggle="modal">
-                  Messages <span></span></a> */}
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
+                <a className="nav-link" onClick={this.onMessageClick}>
+                  Messages </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">
@@ -45,6 +43,8 @@ class Header extends Component {
             </ul>
           </div>
         </nav>
+        {notification &&
+          <Redirect to={{ pathname: '/notification' }} />}
       </div>
 
     );

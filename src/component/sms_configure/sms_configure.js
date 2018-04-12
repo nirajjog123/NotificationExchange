@@ -5,7 +5,7 @@ class Sms_msg_configure extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      msg: ''
+    
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,6 +14,7 @@ class Sms_msg_configure extends Component {
   handleChange(event) {
     const value = event.target.value;
     const name = event.target.name;
+    
     this.setState({
       [name]: value
     });
@@ -21,6 +22,13 @@ class Sms_msg_configure extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let obj = {
+      l1evaluate: this.state.template,
+      l1seniority: this.state.msg
+    }
+    console.log("obj ", obj);
+    this.props.transferDataToInputModal(obj);
+
     this.setState({ from: true });
     let msg = this.state.msg;
     let config = {
@@ -42,6 +50,11 @@ class Sms_msg_configure extends Component {
     return (
       <div className="margin-t-30 sms">
         <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label >Template Name</label>
+            <input className="form-control" type="textArea" name="template" required placeholder="Name"
+              onChange={this.handleChange} />
+          </div>
           <div className="form-group">
             <label >Message</label>
             <input className="form-control" type="textArea" name="msg" required placeholder="write here"
