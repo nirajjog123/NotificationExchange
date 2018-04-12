@@ -37,9 +37,7 @@ class msg_configure extends Component {
     const { queue } = this.state
     return (
       <div className="margin-t-95 msgconfig">
-        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Header />
-        </div>
+      
         <div className="row">
           <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">
             <div className="graybkg">
