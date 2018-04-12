@@ -7,7 +7,6 @@ import Header from '../dashboard/Header';
 
 class msg_configure extends Component {
 
-<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {
@@ -63,67 +62,6 @@ class msg_configure extends Component {
             </div>
           </div>
         </div>
-
-
-=======
-    constructor(props) {
-        super(props);
-        this.state = {
-                      template:'',
-                      sms: false,
-                      email:false,
-                      queue:false
-                    };
-    
-        this.handleCheck = this.handleCheck.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-      }
-
-      handleCheck(event){
-          if(event.target.name === 'sms'){
-            this.setState({sms: true,email:false,queue:false});
-          }else if(event.target.name === 'email'){
-            this.setState({sms: false,email:true,queue:false});    
-          }else if(event.target.name === 'queue'){
-            this.setState({sms: false,email:false,queue:true});    
-          }
-        
-      }
-
-      handleChange(event) {
-        const value = event.target.value;
-      const name = event.target.name;
-      this.setState({
-        [name]: value
-      });
-      }
-
-    render() {
-        const { sms } = this.state 
-        const { email } = this.state 
-        const { queue } = this.state 
-        const {template} = this.state
-    return (
-        <div className = "dashboard-component container">
-        <div className="form-group">
-            <label >Template Name</label>
-            <input className="form-control"  type="text" name="template"  required  placeholder="write here" 
-            onChange={this.handleChange} />
-          </div>
-        <div >
-      <button onClick={this.handleCheck} name = 'sms' className="btn btn-primary btn-block">SMS</button>
-      <button onClick={this.handleCheck} name = 'email' className="btn btn-primary btn-block">EMAIL</button>
-      <button onClick={this.handleCheck} name = 'queue' className="btn btn-primary btn-block">QUEUE</button>
-      </div>
-
-      <div id='message'>
-
-      {sms && <Sms_msg_configure templateName={template}/>}
-      {email && <Email_msg_configure templateName={template}/>}
-      {queue && <Queue_msg_configure templateName={template}/>}
-
-      </div>
->>>>>>> updated code
       </div>
     );
   }

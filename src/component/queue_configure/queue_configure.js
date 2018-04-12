@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-import React, { Component } from 'react'
 
-
-class Queue_msg_configure extends Component {
-  render() {
-
-    return (
-      <div className="margin-t-30 queue">
-        queue page
-=======
 import React,{Component} from 'react'
 import axios from 'axios';
 
@@ -52,7 +42,7 @@ class Queue_msg_configure extends Component {
     render() {
        
     return (
-        <div className=" container">
+        <div className="margin-t-30 queue">
        <form onSubmit={this.handleSubmit}>
         
           <div className="form-group">

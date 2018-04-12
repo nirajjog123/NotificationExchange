@@ -35,26 +35,9 @@ class Sms_msg_configure extends Component {
         console.log(response);
       })
 
-<<<<<<< HEAD
   }
   render() {
-=======
-    handleSubmit(event) {
-        event.preventDefault();
-        this.setState({from: true});
-        let msg = this.state.msg;
-        let templateName = this.props.templateName
-        let config = {
-            headers: {'authorization': localStorage.getItem('tokenId')}
-          };
-        axios.post('api/template/sms',{
-            smsTemplate: {message:msg},
-          templateName:templateName
-        },config)
-          .then( (response) => {
-            console.log(response);
-        
->>>>>>> updated code
+
 
     return (
       <div className="margin-t-30 sms">

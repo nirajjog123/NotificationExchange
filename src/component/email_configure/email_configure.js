@@ -30,45 +30,16 @@ class Email_msg_configure extends Component {
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
     };
-
-    axios.post('api/template/email', {
-      emailTemplate: {
-        fromEmailAddress: from,
-        subject: sub,
-        message: message
-      },
-      tenantId: 123,
-      templateName: 'demoTemplate'
-    }, config)
-      .then((response) => {
-        console.log(response);
-
-<<<<<<< HEAD
-
-=======
-    handleSubmit(event) {
-        event.preventDefault();
-        this.setState({from: true});
-        let from = this.state.from;
-        let sub = this.state.subject;
-        let message = this.state.msg;
-        let templateName = this.props.templateName
-        let config = {
-            headers: {'authorization': localStorage.getItem('tokenId')}
-          };
-
         axios.post('api/template/email',{
             emailTemplate: {
                         fromEmailAddress: from,
                         subject: sub,
                         message: message
                             },
-                templateName:templateName
+                templateName:"templateName"
         },config)
           .then( (response) => {
             console.log(response);
-        
->>>>>>> updated code
 
       })
 
@@ -100,5 +71,6 @@ class Email_msg_configure extends Component {
     );
   }
 }
+  
 
 export default Email_msg_configure;
