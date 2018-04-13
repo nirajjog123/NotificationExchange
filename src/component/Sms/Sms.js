@@ -7,6 +7,7 @@ class Sms extends Component {
     this.state = {
     
     }
+    console.log("sms", this.props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -52,6 +53,7 @@ class Sms extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label >Template Name</label>
+            {/* <p>{this.props.editData.message}</p> */}
             <input className="form-control" type="textArea" name="template" required placeholder="Name"
               onChange={this.handleChange} />
           </div>

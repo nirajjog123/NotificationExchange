@@ -9,20 +9,37 @@ import '../Notification/Notification.css';
 class Notification extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            listingData: {},
+        this.state = {           
             create_Msg: false,
-            data: []
+            data: [],
+            edit : false,
+            selectedCandidate: {},
+            mug : "mugdha"
         };
         this.handleCreate = this.handleCreate.bind(this);
         this.editNotificationButton = this.editNotificationButton.bind(this);
         this.deleteNotificationButton = this.deleteNotificationButton.bind(this);
+        this.editData = this.editData.bind(this);
+        this.deleteData = this.deleteData.bind(this);
+        
+        
     }
     editNotificationButton(cell, row) {
-        return <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edit')}>Edit</button>;
+        return <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edittt')}>Edit</button>;
     }
     deleteNotificationButton(cell, row) {
         return <button className="btn notificationBtn" onClick={() => this.deleteData(row, 'Delete')}>Delete</button>
+    }
+    editData(row) {   
+        this.setState({ edit: true,selectedCandidate:row });
+        console.log("aa",this.state.selectedCandidate);
+    }
+    deleteData(row) {         
+        let arr = this.state.data;
+        arr.splice(arr.indexOf(row), 1);
+        this.setState({
+            data: [...arr]       
+        })             
     }
     handleCreate(event) {
         this.setState({ create_Msg: true });
@@ -38,7 +55,8 @@ class Notification extends Component {
             });
     };
     render() {
-        const { create_msg } = this.state;
+        const { create_msg,edit } = this.state;
+        
 
         return (
             <div>
@@ -57,6 +75,10 @@ class Notification extends Component {
                     </BootstrapTable>
                 </div>
                 {create_msg && <Redirect to={{ pathname: '/message' }} />}
+                {edit && <Redirect to={{ 
+                    pathname: '/message',
+                    state : {editData: this.state.mug}
+                    }} />}
             </div>
         );
     }
