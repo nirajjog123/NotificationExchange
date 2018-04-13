@@ -1,7 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import { router,Redirect,Route } from 'react-router'
-import { Link } from 'react-router-link'
+import { router,Redirect,Route } from 'react-router';
+import { Link } from 'react-router-link';
+import '../Header/Header.css';
 
 
 class Header extends Component {

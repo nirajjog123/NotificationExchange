@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './dashboard.css';
-//import Header from './Header';
+import './Dashboard.css';
 import Quota from './Quota';
-import Chart from './Chart';
-import Message from '../msg_configure/msg_configure';
+
 
 
 class Dashboard extends Component {

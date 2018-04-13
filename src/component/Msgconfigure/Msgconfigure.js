@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Sms_msg_configure from '../sms_configure/sms_configure';
-import Email_msg_configure from '../email_configure/email_configure';
-import Queue_msg_configure from '../queue_configure/queue_configure';
-//import Header from '../dashboard/Header';
+import Sms from '../Sms/Sms';
+import Email from '../Email/Email';
+import Queue from '../Queue/Queue';
 
-
-class msg_configure extends Component {
+class Message extends Component {
 
   constructor(props) {
     super(props);
@@ -54,9 +52,9 @@ class msg_configure extends Component {
           </div>
           <div className="col-md-12 col-sm-12 col-md-4 col-lg-4">
             <div id='message'>
-              {sms && <Sms_msg_configure />}
-              {email && <Email_msg_configure />}
-              {queue && <Queue_msg_configure />}
+              {sms && <Sms />}
+              {email && <Email />}
+              {queue && <Queue />}
             </div>
           </div>
         </div>
@@ -65,4 +63,4 @@ class msg_configure extends Component {
   }
 }
 
-export default msg_configure;
+export default Message;

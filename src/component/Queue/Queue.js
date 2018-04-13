@@ -3,7 +3,7 @@ import React,{Component} from 'react'
 import axios from 'axios';
 
 
-class Queue_msg_configure extends Component {
+class Queue extends Component {
     constructor(props) {
         super(props);
         this.state = {msg:''
@@ -53,10 +53,9 @@ class Queue_msg_configure extends Component {
           <button type="submit" className="btn btn-primary">Save</button>
           <button  className="btn btn-primary">Cancel</button>
         </form>
->>>>>>> updated code
       </div>
     );
   }
 }
 
-export default Queue_msg_configure;
+export default Queue;

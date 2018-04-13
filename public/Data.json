@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "templatename": "Buy",
+        "message": "Hello",
+        "lastupdated": "23-1-2018"
+    },
+    {
+        "id": 2,
+        "templatename": "Buy",
+        "message": "Hello",
+        "lastupdated": "23-1-2018"
+    },
+    {
+        "id": 3,
+        "templatename": "sell",
+        "message": "Hello",
+        "lastupdated": "11-1-2018"
+    },
+    {
+        "id": 4,
+        "templatename": "Buy",
+        "message": "Hello",
+        "lastupdated": "13-1-2018"
+    },
+    {
+        "id": 5,
+        "templatename": "Buy",
+        "message": "Hello",
+        "lastupdated": "23-1-2018"
+    }    
+]

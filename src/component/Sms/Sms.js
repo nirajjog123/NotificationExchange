@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-class Sms_msg_configure extends Component {
+class Sms extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,4 +68,4 @@ class Sms_msg_configure extends Component {
   }
 }
 
-export default Sms_msg_configure;
+export default Sms;
