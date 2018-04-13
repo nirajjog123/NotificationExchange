@@ -3,7 +3,7 @@ import { router,Redirect,Route } from 'react-router'
 import { Link } from 'react-router-link'
 import axios from 'axios';
 //import '../dashboard/dashboard'
-import './Login.css'
+import './login.css'
 
 class Login extends Component {
 

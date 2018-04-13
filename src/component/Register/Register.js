@@ -10,10 +10,12 @@ class Register extends Component {
         this.state = {userName: '',
                       password:'',
                       mobileNo:'',
-                    'register_user':false};
+                     'register_user':false,
+                     login:false};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginRoute = this.loginRoute.bind(this);
       }
 
       handleChange(event) {  
@@ -22,6 +24,10 @@ class Register extends Component {
       this.setState({
         [name]: value
       });   
+    }
+
+    loginRoute(){
+      this.setState({ login: true});
     }
 
       handleSubmit(event) {
@@ -50,7 +56,7 @@ class Register extends Component {
 
 
     render() {
-        const { register_user } = this.state
+        const { register_user , login } = this.state
     return (
         <div class="container">
     <div class="card card-register mx-auto mt-5">
@@ -85,13 +91,13 @@ class Register extends Component {
           <button type='submit' className="btn btn-primary btn-block">Register</button>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="#">Login Page</a>
+          <a class="d-block small mt-3" onClick={this.loginRoute}>Login Page</a>
           <a class="d-block small" href="#">Forgot Password?</a>
         </div>
       </div>
     </div>
-    {register_user &&
-    <Redirect to = {{pathname:'/dashboard'}}/>}
+    {register_user &&<Redirect to = {{pathname:'/dashboard'}}/>}
+    {register_user &&<Redirect to = {{pathname:'/dashboard'}}/>}
   </div>
     );
   }
