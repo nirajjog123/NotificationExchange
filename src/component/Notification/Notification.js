@@ -16,12 +16,12 @@ class Notification extends Component {
         };
         this.handleCreate = this.handleCreate.bind(this);
         this.editNotificationButton = this.editNotificationButton.bind(this);
-        this.deleteNotificationButton=this.deleteNotificationButton.bind(this);
+        this.deleteNotificationButton = this.deleteNotificationButton.bind(this);
     }
     editNotificationButton(cell, row) {
         return <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edit')}>Edit</button>;
     }
-    deleteNotificationButton(cell,row){
+    deleteNotificationButton(cell, row) {
         return <button className="btn notificationBtn" onClick={() => this.deleteData(row, 'Delete')}>Delete</button>
     }
     handleCreate(event) {
