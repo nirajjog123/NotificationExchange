@@ -13,9 +13,8 @@ class Message extends Component {
       email: false,
       queue: false
     };
-
-    this.handleCheck = this.handleCheck.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    console.log("mug", this.props);
+    this.handleCheck = this.handleCheck.bind(this);   
   }
 
   handleCheck(event) {
@@ -52,7 +51,7 @@ class Message extends Component {
           </div>
           <div className="col-md-12 col-sm-12 col-md-4 col-lg-4">
             <div id='message'>
-              {sms && <Sms />}
+              {sms && <Sms editData={this.state.editData}/>}
               {email && <Email />}
               {queue && <Queue />}
             </div>
