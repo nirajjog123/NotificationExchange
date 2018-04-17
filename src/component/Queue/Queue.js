@@ -49,6 +49,7 @@ class Queue extends Component {
     render() {
       const {listRoute} = this.state
 
+      let templateDta = this.props.editData.templatename;
       const editTemplateName = (this.props.editData ===undefined)? (
         <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
                 onChange={this.handleChange} />
@@ -60,7 +61,8 @@ class Queue extends Component {
         <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
             onChange={this.handleChange} />
       ) : (
-        <div>{this.props.editData.message}</div>
+        <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
+        onChange={this.handleChange} value= {templateDta}/>
       );
   
     return (
@@ -74,8 +76,8 @@ class Queue extends Component {
             <label >Message</label>
             {editMessage}
           </div>
-          <button type="submit" className="btn btn-primary">Save</button>
-          <button  className="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
+          <button type="submit" className="btn margin-r-20 savebtn">Save</button>
+          <button  className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
         </form>
         {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
       </div>
