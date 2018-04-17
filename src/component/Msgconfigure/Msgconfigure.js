@@ -51,9 +51,9 @@ class Message extends Component {
           </div>
           <div className="col-md-12 col-sm-12 col-md-4 col-lg-4">
             <div id='message'>
-              {sms && <Sms editData={this.state.editData}/>}
-              {email && <Email />}
-              {queue && <Queue />}
+              {sms && <Sms editData={ this.props.location.state}/>}
+              {email && <Email editData={ this.props.location.state} />}
+              {queue && <Queue editData={ this.props.location.state} />}
             </div>
           </div>
         </div>
