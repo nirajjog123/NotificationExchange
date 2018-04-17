@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import {Redirect} from 'react-router';
 
 class Sms extends Component {
   constructor(props) {
     super(props);
+   
     this.state = {
-    
+      msg : '',
+      template :'',
+      listRoute: false,
+      templateNameReceived :'',
+      templateName:''
     }
-    console.log("sms", this.props);
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleChange(event) {
@@ -28,7 +35,7 @@ class Sms extends Component {
       l1seniority: this.state.msg
     }
     console.log("obj ", obj);
-    this.props.transferDataToInputModal(obj);
+    
 
     this.setState({ from: true });
     let msg = this.state.msg;
@@ -42,29 +49,48 @@ class Sms extends Component {
     }, config)
       .then((response) => {
         console.log(response);
+        this.setState({listRoute: true});
       })
 
   }
-  render() {
 
+  handleCancel(){
+    this.setState({listRoute: true});
+  }
+  render() {
+    const {listRoute} = this.state
+    
+    const editTemplateName = (this.props.editData ===undefined)? (
+      <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
+              onChange={this.handleChange} />
+    ) : (
+      <div>{this.props.editData.templatename}</div>
+    );
+
+    const editMessage = (this.props.editData ===undefined)? (
+      <input className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange} />
+    ) : (
+      <div>{this.props.editData.message}</div>
+    );
 
     return (
       <div className="margin-t-30 sms">
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label >Template Name</label>
-            {/* <p>{this.props.editData.message}</p> */}
-            <input className="form-control" type="textArea" name="template" required placeholder="Name"
-              onChange={this.handleChange} />
+           
+            {editTemplateName}
+              
           </div>
           <div className="form-group">
             <label >Message</label>
-            <input className="form-control" type="textArea" name="msg" required placeholder="write here"
-              onChange={this.handleChange} />
+            {editMessage}
           </div>
           <button type="submit" className="btn margin-r-20 savebtn">Save</button>
-          <button className="btn cancelbtn">Cancel</button>
+          <button className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
         </form>
+        {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
       </div>
     );
   }

@@ -8,7 +8,7 @@
     {
         "id": 2,
         "templatename": "Buy",
-        "message": "Hello",
+        "message": "dummy data",
         "lastupdated": "23-1-2018"
     },
     {
@@ -20,12 +20,12 @@
     {
         "id": 4,
         "templatename": "Buy",
-        "message": "Hello",
+        "message": "Hello34",
         "lastupdated": "13-1-2018"
     },
     {
         "id": 5,
-        "templatename": "Buy",
+        "templatename": "sold",
         "message": "Hello",
         "lastupdated": "23-1-2018"
     }    

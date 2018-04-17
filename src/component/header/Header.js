@@ -19,6 +19,8 @@ class Header extends Component {
     this.onLogout = this.onLogout.bind(this);
   }
   onMessageClick(event) {
+    let {logout} = this.state;
+    // if(!logout){
     if (event.target.id === 'dashboard') {
       this.setState({ dashboard: true,notification: false,analytics :false})
     } else if (event.target.id === 'message') {
@@ -26,7 +28,8 @@ class Header extends Component {
     }else if (event.target.id === 'analytics') {
       this.setState({ notification: false,dashboard: false,analytics :true})
     }   
-  }
+  // }
+}
 
   onLogout(event){
     localStorage.clear();

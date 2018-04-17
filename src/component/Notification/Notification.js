@@ -32,7 +32,6 @@ class Notification extends Component {
     }
     editData(row) {   
         this.setState({ edit: true,selectedCandidate:row });
-        console.log("aa",this.state.selectedCandidate);
     }
     deleteData(row) {         
         let arr = this.state.data;
@@ -77,7 +76,7 @@ class Notification extends Component {
                 {create_msg && <Redirect to={{ pathname: '/message' }} />}
                 {edit && <Redirect to={{ 
                     pathname: '/message',
-                    state : {editData: this.state.mug}
+                    state :  this.state.selectedCandidate
                     }} />}
             </div>
         );
