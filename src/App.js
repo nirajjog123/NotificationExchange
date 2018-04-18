@@ -10,6 +10,9 @@ import Header from './component/Header/Header';
 import Analytics from './component/analytics/analytics';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import './App.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+import 'open-iconic/font/css/open-iconic-foundation.css';
+import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {

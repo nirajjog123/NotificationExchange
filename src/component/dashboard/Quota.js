@@ -20,7 +20,7 @@ class Quota extends Component {
           <li class="breadcrumb-item active">My Dashboard</li>
         </ol>
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card text-white  bg-warning o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
@@ -31,17 +31,33 @@ class Quota extends Component {
 
               <div className="chartc3">
                 <Graph />
-              </div>             
+              </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">Messages</div>
-              </div>            
+                <div class="mr-5">Notification</div>
+                <div className="chartc3">
+                  <Graph />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">Pick time</div>
+                <div className="chartc3">
+                  <Graph />
+                </div>
+              </div>
             </div>
           </div>
 
