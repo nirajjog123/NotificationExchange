@@ -16,9 +16,8 @@ class Dashboard extends Component {
                   <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                       <span class="widget-icon">
-                        {/* <i className="glyphicon glyphicon-user text-info"></i> */}
-                        {/* <img src="caret-top.svg"/> */}
                         <i className="fa fa-fw fa-sign-out"></i>
+                        <i class="fa fa-address-book-o"></i>
                       </span>
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
