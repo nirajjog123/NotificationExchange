@@ -54,14 +54,14 @@ class Notification extends Component {
             });
     };
     render() {
-        const { create_msg,edit } = this.state;
+        const { create_Msg,edit } = this.state;
         
 
         return (
             <div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-b-35 margin-t-70">
-                    <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 </div>
+                <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <BootstrapTable data={this.state.data} options={{ noDataText: 'This is custom text for empty data' }} striped={true} hover={true} search searchPlaceholder="Search" version='4'
                         pagination={true}>
@@ -73,7 +73,7 @@ class Notification extends Component {
                         <TableHeaderColumn dataField='delete' dataAlign="center" dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
-                {create_msg && <Redirect to={{ pathname: '/message' }} />}
+                {create_Msg && <Redirect to={{ pathname: '/message' }} />}
                 {edit && <Redirect to={{ 
                     pathname: '/message',
                     state :  this.state.selectedCandidate

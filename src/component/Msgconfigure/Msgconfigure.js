@@ -37,6 +37,7 @@ class Message extends Component {
       
         <div className="row">
           <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">
+          <div></div>
             <div className="graybkg">
               <div>
                 <button onClick={this.handleCheck.bind(this)} name='sms' className="card-body btn-block msgbtn">SMS</button>

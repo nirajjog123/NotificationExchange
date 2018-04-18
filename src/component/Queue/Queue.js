@@ -49,7 +49,7 @@ class Queue extends Component {
     render() {
       const {listRoute} = this.state
 
-      let templateDta = this.props.editData.templatename;
+      let templateDta = this.props.editData ? this.props.editData.templatename :'';
       const editTemplateName = (this.props.editData ===undefined)? (
         <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
                 onChange={this.handleChange} />

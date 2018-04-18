@@ -27,21 +27,7 @@ class graph extends Component {
       _setLineChart() {
         this.setState({ chartType: 'line' });
       }
-    //   componentDidMount() {
-    //     this._updateChart();
-    //   }
-    //   componentDidUpdate() {
-    //     this._updateChart();
-    //   }
-    //   _updateChart() {
-    //     const Charts = Chart.generate({
-    //       bindto: '#testchart',
-    //       data: {
-    //         columns: this.props.columns,
-    //         type: this.props.chartType
-    //       }
-    //     });
-    //   }
+
 
     render() {
        
