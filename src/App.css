@@ -2,14 +2,14 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: #fff;
+	background: #f5f5f5 !important;
 	color: #fff;
 	font-family: Arial;
 	font-size:15px;
 }
 .defaultAlign{
 	margin: 0;
-	padding: 0 !important;
+	padding: 0;
   }
 .lft{float: left;}
 .padding-l-5{padding-left: 5px;}
@@ -25,9 +25,10 @@ body{
 .margin-t-30{margin-top:30px;}
 .margin-r-20{margin-right:20px;}
 .margin-t-55{margin-top:55px;}
+.margin-t-30{margin-top:30px;}
 .margin-t-95{margin-top:95px;}
 .margin-t-70{margin-top:70px;}
-
+.chartc3{height: 350px;}
 
 .msgconfig .msgbtn{
   background: #343A40;
@@ -35,6 +36,7 @@ body{
   outline: none;
   color: #fff;
 }
+
 .msgconfig .msgbtn:hover{
   background: #545b62;
   border:none;
@@ -50,5 +52,20 @@ body{
   background: #343A40;
   color: #fff;
 }
+/*dashboard*/
 
-
+.widget-card{
+  position: relative;
+  margin-bottom: 1.875rem;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: .2rem;
+  box-shadow: 0 0 10px #e8e8e8;
+  overflow: hidden;
+}   
+.widget-card {
+  min-height: 135px;
+}
+.widget-body{
+  padding: 10px;
+}

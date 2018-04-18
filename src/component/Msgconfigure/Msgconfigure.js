@@ -12,8 +12,7 @@ class Message extends Component {
       sms: true,
       email: false,
       queue: false
-    };
-    console.log("mug", this.props);
+    };  
     this.handleCheck = this.handleCheck.bind(this);   
   }
 
