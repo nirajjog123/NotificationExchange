@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Login from './component/Login/Login';
+import Login from './component/login/login';
 import Register from './component/Register/Register';
-import Dashboard from './component/Dashboard/Dashboard';
-import Graph from './component/Graph/Graph';
+import Dashboard from './component/dashboard/Dashboard';
+import Graph from './component/graph/graph';
 import Message from './component/Msgconfigure/Msgconfigure';
 import Notification from './component/Notification/Notification';
-import Header from './component/Header/Header';
+import Header from './component/header/Header';
 import Analytics from './component/analytics/analytics';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.css';
-import 'open-iconic/font/css/open-iconic-foundation.css';
+//import 'open-iconic/font/css/open-iconic-foundation.css';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import Graph from '../Graph/Graph';
+import Graph from '../graph/graph';
 
 class Quota extends Component {
   constructor(props) {

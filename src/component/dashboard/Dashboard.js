@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
 import Quota from './Quota';
-import 'open-iconic/font/css/open-iconic-foundation.css';
-import Graph from '../Graph/Graph';
+//import 'open-iconic/font/css/open-iconic-foundation.css';
+import Graph from '../graph/graph';
 
 class Dashboard extends Component {
   render() {

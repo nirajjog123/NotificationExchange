@@ -3,7 +3,7 @@ import { Component } from "react";
 import { router,Redirect,Route } from 'react-router';
 import { Link } from 'react-router-link';
 import axios from 'axios';
-import '../Header/Header.css';
+import '../header/Header.css';
 
 
 class Header extends Component {
