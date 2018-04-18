@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './dashboard.css';
+import './Dashboard.css';
 import Quota from './Quota';
 
 class Dashboard extends Component {  
