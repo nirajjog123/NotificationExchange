@@ -56,6 +56,8 @@ class Email extends Component {
   render() {
     const {listRoute} = this.state
 
+    let templateDta = this.props.editData ? this.props.editData.templatename :'';
+
     const editTemplateName = (this.props.editData ===undefined)? (
       <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
               onChange={this.handleChange} />
@@ -67,7 +69,8 @@ class Email extends Component {
       <input className="form-control" type="textArea" name="msg" required
       placeholder="write here" onChange={this.handleChange} />
     ) : (
-      <div>{this.props.editData.message}</div>
+      <input className="form-control" type="textArea" name="msg" required
+      placeholder="write here" onChange={this.handleChange} value={templateDta} />
     );
 
     return (

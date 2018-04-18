@@ -24,39 +24,20 @@ class Queue extends Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({ from: true });
-    let msg = this.state.msg;
-    let templateName = this.props.templateName
-    let config = {
-      headers: { 'authorization': localStorage.getItem('tokenId') }
-    };
-    axios.post('api/template/queue', {
-      smsTemplate: { message: msg },
-      templateName: templateName
-    }, config)
-      .then((response) => {
-        console.log(response);
-      })
-  }
-  handleCancel() {
-    this.setState({ listRoute: true });
-  }
-  render() {
-    const { listRoute } = this.state;
-    const editTemplateName = (this.props.editData === undefined) ? (
-      <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
-        onChange={this.handleChange} />
-    ) : (
+      let templateDta = this.props.editData ? this.props.editData.templatename :'';
+      const editTemplateName = (this.props.editData ===undefined)? (
+        <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
+                onChange={this.handleChange} />
+      ) : (
         <div>{this.props.editData.templatename}</div>
       );
-
-    const editMessage = (this.props.editData === undefined) ? (
-      <input className="form-control" type="textArea" name="msg" required placeholder="write here"
-        onChange={this.handleChange} />
-    ) : (
-        <div>{this.props.editData.message}</div>
+  
+      const editMessage = (this.props.editData ===undefined)? (
+        <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
+            onChange={this.handleChange} />
+      ) : (
+        <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
+        onChange={this.handleChange} value= {templateDta}/>
       );
 
     return (
@@ -70,8 +51,8 @@ class Queue extends Component {
             <label >Message</label>
             {editMessage}
           </div>
-          <button type="submit" className="btn btn-primary">Save</button>
-          <button className="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
+          <button type="submit" className="btn margin-r-20 savebtn">Save</button>
+          <button  className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
         </form>
         {listRoute && <Redirect to={{ pathname: '/notification' }} />}
       </div>

@@ -9,9 +9,7 @@ class Sms extends Component {
     this.state = {
       msg : '',
       template :'',
-      listRoute: false,
-      templateNameReceived :'',
-      templateName:''
+      listRoute: false
     }
     
     this.handleChange = this.handleChange.bind(this);
@@ -30,22 +28,18 @@ class Sms extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let obj = {
-      l1evaluate: this.state.template,
-      l1seniority: this.state.msg
-    }
-    console.log("obj ", obj);
-    
-
-    this.setState({ from: true });
     let msg = this.state.msg;
+    this.setState({ from: true });
+    if(this.props.editData){
+      this.setState({ template: this.props.editData.templatename });
+    }
+    let configuredTName = this.state.template;
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
     };
     axios.post('api/template/sms', {
       smsTemplate: { message: msg },
-      tenantId: 123,
-      templateName: 'demoTemplate'
+      templateName: configuredTName
     }, config)
       .then((response) => {
         console.log(response);
@@ -59,6 +53,8 @@ class Sms extends Component {
   }
   render() {
     const {listRoute} = this.state
+
+    let templateDta = this.props.editData ? this.props.editData.templatename :'';
     
     const editTemplateName = (this.props.editData ===undefined)? (
       <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
@@ -71,7 +67,8 @@ class Sms extends Component {
       <input className="form-control" type="textArea" name="msg" required placeholder="write here"
       onChange={this.handleChange} />
     ) : (
-      <div>{this.props.editData.message}</div>
+      <input className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange} value= {templateDta} />
     );
 
     return (
