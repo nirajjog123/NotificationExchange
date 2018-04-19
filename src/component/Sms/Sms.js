@@ -11,7 +11,7 @@ class Sms extends Component {
       template :'',
       listRoute: false
     }
-    
+    console.log(this.props)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -29,15 +29,30 @@ class Sms extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let msg = this.state.msg;
+    let templateIdString= '';
+    let tNameString = '';
     this.setState({ from: true });
+
+    //set template name
     if(this.props.editData){
       this.setState({ template: this.props.editData.templatename });
+      tNameString = this.props.editData.templatename;
+    }else if(this.props.templateId.data){
+      this.setState({ template: this.props.templateId.data.templateName });
+      templateIdString = this.props.templateId.data._id;
+      tNameString = this.props.templateId.data.templateName;
     }
-    let configuredTName = this.state.template;
+
+
+    let configuredTName = tNameString;
+    
+    //set header for authorization
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
     };
-    axios.post('api/template/sms', {
+
+
+    axios.patch('api/template/sms/'+ templateIdString , {
       smsTemplate: { message: msg },
       templateName: configuredTName
     }, config)
@@ -56,12 +71,7 @@ class Sms extends Component {
 
     let templateDta = this.props.editData ? this.props.editData.templatename :'';
     
-    const editTemplateName = (this.props.editData ===undefined)? (
-      <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
-              onChange={this.handleChange} />
-    ) : (
-      <div>{this.props.editData.templatename}</div>
-    );
+  
 
     const editMessage = (this.props.editData ===undefined)? (
       <input className="form-control" type="textArea" name="msg" required placeholder="write here"
@@ -74,12 +84,7 @@ class Sms extends Component {
     return (
       <div className="margin-t-30 sms">
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label >Template Name</label>
-           
-            {editTemplateName}
-              
-          </div>
+          
           <div className="form-group">
             <label >Message</label>
             {editMessage}
