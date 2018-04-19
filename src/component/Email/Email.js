@@ -10,7 +10,7 @@ class Email extends Component {
       subject: '',
       msg: '',
       listRoute: false,
-      templateName:''
+      template:''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,17 +31,29 @@ class Email extends Component {
     let from = this.state.from;
     let sub = this.state.subject;
     let message = this.state.msg;
-    let templateName = this.props.templateName
+    let templateIdString= '';
+    let tNameString = '';
+      //set template name
+      if(this.props.editData){
+        this.setState({ template: this.props.editData.templatename });
+        tNameString = this.props.editData.templatename;
+      }else if(this.props.templateId.data){
+        this.setState({ template: this.props.templateId.data.templateName });
+        templateIdString = this.props.templateId.data._id;
+        tNameString = this.props.templateId.data.templateName;
+      }
+      let configuredTName = tNameString;
+
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
     };
-        axios.post('api/template/email',{
+        axios.patch('api/template/email/'+templateIdString,{
             emailTemplate: {
                         fromEmailAddress: from,
                         subject: sub,
                         message: message
                             },
-                templateName:templateName
+                templateName:configuredTName
         },config)
           .then( (response) => {
             console.log(response);
@@ -58,13 +70,6 @@ class Email extends Component {
 
     let templateDta = this.props.editData ? this.props.editData.templatename :'';
 
-    const editTemplateName = (this.props.editData ===undefined)? (
-      <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
-              onChange={this.handleChange} />
-    ) : (
-      <div>{this.props.editData.templatename}</div>
-    );
-
     const editMessage = (this.props.editData ===undefined)? (
       <input className="form-control" type="textArea" name="msg" required
       placeholder="write here" onChange={this.handleChange} />
@@ -76,12 +81,6 @@ class Email extends Component {
     return (
       <div className="margin-t-30 email">
         <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
-            <label >Template Name</label>
-           
-            {editTemplateName}
-              
-          </div>
           <div className="form-group">
             <label >From</label>
             <input className="form-control" name="from" type='email' required placeholder="from sender"

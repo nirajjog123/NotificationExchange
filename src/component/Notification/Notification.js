@@ -65,7 +65,7 @@ class Notification extends Component {
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <BootstrapTable data={this.state.data} options={{ noDataText: 'This is custom text for empty data' }} striped={true} hover={true} search searchPlaceholder="Search" version='4'
                         pagination={true}>
-                        <TableHeaderColumn dataField='id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
+                        <TableHeaderColumn dataField='id' dataAlign="center" isKey>Template ID</TableHeaderColumn>
                         <TableHeaderColumn dataField='templatename' dataAlign="center">Template Name</TableHeaderColumn>
                         <TableHeaderColumn dataField='message' dataAlign="center">Messsage</TableHeaderColumn>
                         <TableHeaderColumn dataField='lastupdated' dataAlign="center">Last updated</TableHeaderColumn>
