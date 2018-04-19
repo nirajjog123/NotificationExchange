@@ -3,8 +3,11 @@ import './Dashboard.css';
 import Quota from './Quota';
 //import 'open-iconic/font/css/open-iconic-foundation.css';
 import Graph from '../graph/graph';
+import Graph2 from '../graph/graph2';
+import Grid from "./Grid";
 
 class Dashboard extends Component {
+
   render() {
     return (
       <div className="col-md-12 demo-div heading-section defaultAlign">
@@ -97,7 +100,7 @@ class Dashboard extends Component {
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <div class="card">
                 <div class="card-body">
-                  <div class="mr-5">Quota</div>
+                  <div class="mr-5">No of notifications sent today</div>
                 </div>
                 <Graph />
               </div>
@@ -105,11 +108,18 @@ class Dashboard extends Component {
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <div class="card">
                 <div class="card-body">
-                  <div class="mr-5">Quota</div>
+                  <div class="mr-5">Date wise Notifications sent</div>
                 </div>
-                <Graph />
+                <Graph2 />
               </div>
             </div>
+          </div>
+          <div class="row">
+            Todays top 5 SMS sent
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+              <Grid />
+            </div>          
           </div>
         </div>
       </div>
