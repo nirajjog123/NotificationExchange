@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { router,Redirect,Route } from 'react-router'
 import { Link } from 'react-router-link'
 import axios from 'axios';
-//import '../dashboard/dashboard'
-import './login.css'
+import './Login.css'
 
 class Login extends Component {
 
