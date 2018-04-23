@@ -1,7 +1,37 @@
 .card-login {
   max-width: 25rem;
-}
-
-.card-register {
+  }
+  .card-register {
   max-width: 40rem;
-}
+  }
+  .body{
+  background-image: url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+  background-size: cover; 
+  width: 100%;
+  height: 700px;
+  -webkit-filter: blur(5px);
+    z-index: 0;
+  }
+  .login .bkg-gray{background: #343A40;color: #fff;}
+  .margin-t-60{margin-top:60px;}
+  .mx-auto{border: 1px solid #343A40}
+  .card{z-index: 1;opacity: 0.8}
+  .login .grad{position: absolute;top: 40%;}
+  
+  .login .card{
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-top: 50px;
+  top: 10%;
+  left: 35%;
+  width: 400px;
+  }

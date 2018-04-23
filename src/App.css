@@ -1,22 +1,26 @@
 body{
-	margin: 0;
-	padding: 0;
-	background: #f5f5f5 !important;
-	color: #fff;
-	font-family: Arial;
-  font-size:15px;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #fff;
+  font-family: Arial;
+font-size:15px;
 }
+.dashboardalignment{margin:20px 0px 0 0px;}
 .defaultAlign{
-	margin: 0;
-	padding: 0 !important;
-  }
+  margin: 0;
+  padding: 0 !important;
+}
 .lft{float: left;}
+.marginauto{margin: 0 auto;}
 .padding-l-5{padding-left: 5px;}
 .padding-l-10{padding-left: 5px;}
 .padding-l-15{padding-left: 5px;}
 .padding-l-5{padding-left: 5px;}
 .margin-l-5{margin-left: 5px;}
+.margin-l-45{margin-left: 45px;}
+.margin-l-55{margin-left: 55px;}
+.margin-t-55{margin-top:55px;}
 .margin-t-60{margin-top:60px;}
 .margin-b-20{margin-bottom:20px;}
 .margin-b-60{margin-bottom:60px;}
@@ -28,69 +32,84 @@ body{
 .margin-t-30{margin-top:30px;}
 .margin-t-95{margin-top:95px;}
 .margin-t-70{margin-top:70px;}
+.margin-t-75{margin-top:75px;}
+.margin-t-100{margin-top:100px;}
+.margin-lr-25{margin : 0 25px;}
 .chartc3{height: 350px;}
 .text-primary{color: #5d8fc2; }
 .text-success{color: #b2deb1; }
 .text-gray{color: #dd5826; }
+.fontsize25{font-size: 25px;}
+.bkg-gray{background: #343A40;}
+#Header{
 
+}
+.displayblock{
+display: block;
+}
+.displaynone{
+display: none;
+}
 
 
 .msgconfig .msgbtn{
-  background: #343A40;
-  border:none;
-  outline: none;
-  color: #fff;
+background: #343A40;
+border:none;
+outline: none;
+color: #fff;
 }
 
 .msgconfig .msgbtn:hover{
-  background: #545b62;
-  border:none;
-  outline: none;
-  color: #fff;
+background: #545b62;
+border:none;
+outline: none;
+color: #fff;
 }
-.msgconfig  .graybkg{
-  background: #343A40;
-  height: 600px;
+.msgconfig .graybkg{
+background: #343A40;
+height: 600px;
 }
 .email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn{
-  width: 100px;
-  background: #343A40;
-  color: #fff;
+width: 100px;
+background: #343A40;
+color: #fff;
 }
 /*dashboard*/
-
+.dashboard{
+background: #f5f5f5;
+padding-top: 5px;
+}
 .widget-card{
-  position: relative;
-  margin-bottom: 20px;
-  padding: 15px 20px;
-  background: #fff;
-  border-radius: .2rem;
-  box-shadow: 0 0 10px #e8e8e8;
-  overflow: hidden;
-}   
+position: relative;
+margin-bottom: 20px;
+padding: 15px 20px;
+background: #fff;
+border-radius: .2rem;
+box-shadow: 0 0 10px #e8e8e8;
+overflow: hidden;
+} 
 .widget-card {
-  min-height: 135px;
+min-height:100px;
 }
 .widget-body{
-  padding: 0px 5px;
+padding: 0px 5px;
 }
 .widget-body i{
-  font-size: 45px;
+font-size: 65px;
 }
 .animation1{
   transition-property: transform;
   transition-duration: 750ms;
   transition-timing-function: ease;
-  transform: translate(0%, 0%) translateZ(0px);  
+  transform: translate(0%, 0%) translateZ(0px); 
   overflow: hidden;
   position: absolute;
   z-index: 999;
   box-sizing: border-box; 
   margin: 0px;
- 
-}
-
-.animation2{
+  }
+  
+  .animation2{
   transition-property: transform;
   transition-duration: 750ms;
   transition-timing-function: ease;
@@ -98,13 +117,17 @@ body{
   overflow: hidden;
   position: absolute;
   z-index: 999;
-  box-sizing: border-box;   
+  box-sizing: border-box; 
   margin: 0px; 
-}
-.dashboard .no-margin{
+  }
+  .dashboard .no-margin{
   color: #a4a4a4; 
-}
-.dashboard .fw-normal{
+  }
+  .dashboard .fw-normal{
   color: #6d6d6d; 
   font-size: 25px;
-}
+  }
+  .card-body{
+  font-weight: 600;
+  font-size: 17px; 
+  }

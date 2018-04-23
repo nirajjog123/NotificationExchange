@@ -64,6 +64,20 @@ class Message extends Component {
     const { sms } = this.state
     const { email } = this.state
     const { queue ,tempId } = this.state
+
+    let edtTempName = this.props.location.state ? this.props.location.state.templateName:'';
+    //conditional render for template name
+    const editTempRender = (this.props.location.state ===undefined)? (
+      <div>
+      <input className="form-control " type="text" name="template" onChange={this.handleChange}
+      required placeholder="Name" />
+      <button onClick={this.setTemplate}  className="btn">OK</button>
+      </div>
+    ) : (
+      <input className="form-control " type="text" name="template" onChange={this.handleChange}
+            required placeholder="Name" value={edtTempName} />
+    );
+
     return (
       <div className="margin-t-95 msgconfig">
       
@@ -71,9 +85,8 @@ class Message extends Component {
           <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">
           <div>
           <label>Template Name</label>
-          <input className="form-control " type="text" name="template" onChange={this.handleChange}
-            required placeholder="Name" />
-          <button onClick={this.setTemplate}  className="btn">OK</button>
+          {editTempRender}
+          
           </div>
             <div className="graybkg">
               <div>
@@ -83,12 +96,12 @@ class Message extends Component {
                 <button onClick={this.handleCheck} name='email' className="card-body btn-block msgbtn">EMAIL</button>
               </div>
               <div>
-                <button onClick={this.handleCheck} name='queue' className="card-body btn-block msgbtn">QUEUE</button>
+                <button onClick={this.handleCheck} name='queue' className="card-body btn-block msgbtn">MOBILE NOTIFY</button>
               </div>
             </div>
           </div>
           <div className="col-md-12 col-sm-12 col-md-4 col-lg-4">
-            <div id='message'>
+            <div className={(tempId  ? 'show' : 'hidden')}>
               {sms && <Sms editData={ this.props.location.state} templateId={tempId}/>}
               {email && <Email editData={ this.props.location.state} templateId={tempId} />}
               {queue && <Queue editData={ this.props.location.state} templateId={tempId} />}

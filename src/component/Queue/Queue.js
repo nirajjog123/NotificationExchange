@@ -14,22 +14,55 @@ class Queue extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
-    let templateDta = this.props.editData ? this.props.editData.templatename :'';
-    const editTemplateName = (this.props.editData ===undefined)? (
-      <input className="form-control noDisplay" type="textArea" name="template" required placeholder="Name"
-              onChange={this.handleChange} />
-    ) : (
-      <div>{this.props.editData.templatename}</div>
-    );
+  }
 
-    const editMessage = (this.props.editData ===undefined)? (
-      <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
-          onChange={this.handleChange} />
-    ) : (
-      <input className="form-control"  type="textArea" name="msg"  required  placeholder="write here" 
-      onChange={this.handleChange} value= {this.templateDta}/>
-    );
 
+  handleSubmit(event) {
+   event.preventDefault();
+    let msg = this.state.msg;
+    let templateIdString= '';
+    let tNameString = '';
+    this.setState({ from: true });
+
+    //diffrentiate save and s&close button
+    const value = event.target.value;
+    const name = event.target.name;
+
+    //set template name
+    if(this.props.editData){
+      this.setState({ template: this.props.editData.templateName });
+      tNameString = this.props.editData.templateName;
+      templateIdString = this.props.editData._id;
+    }else if(this.props.templateId.data){
+      this.setState({ template: this.props.templateId.data.templateName });
+      templateIdString = this.props.templateId.data._id;
+      tNameString = this.props.templateId.data.templateName;
+    }
+
+
+    let configuredTName = tNameString;
+    
+    //set header for authorization
+    let config = {
+      headers: { 'authorization': localStorage.getItem('tokenId') }
+    };
+
+
+    axios.patch('api/template/device/'+ templateIdString , {
+      deviceTemplate: { message: msg },
+      templateName: configuredTName
+    }, config)
+      .then((response) => {
+        console.log(response);
+        if(name==='close'){
+           this.setState({listRoute: true});
+        }
+      })
+
+  }
+
+  handleCancel(){
+    this.setState({listRoute: true});
   }
 
   handleChange(event) {
@@ -40,21 +73,35 @@ class Queue extends Component {
     });
   }
   render() {
+
+
+    const {listRoute} = this.state
+    let templateDta = ''
+      
+          if(this.props.editData && this.props.editData.smsTemplate){
+             templateDta =  this.props.editData.smsTemplate.message;
+          }
+
+    const editMessage = (this.props.editData ===undefined)? (
+      <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange} ></textarea>
+    ) : (
+      <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange}  >{templateDta}</textarea>
+    );
     return (
       <div className="margin-t-30 queue">
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label >Template Name</label>
-            {this.editTemplateName}
-          </div>
+        <form >
+         
           <div className="form-group">
             <label >Message</label>
-            {this.editMessage}
+            {editMessage}
           </div>
-          <button type="submit" className="btn margin-r-20 savebtn">Save</button>
+          <button  className="btn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
           <button  className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
+          <button  className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
-        {this.state.listRoute && <Redirect to={{ pathname: '/notification' }} />}
+        {listRoute && <Redirect to={{ pathname: '/notification' }} />}
       </div>
     );
   }

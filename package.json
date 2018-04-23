@@ -33,6 +33,7 @@
     "immutability-helper": "^2.6.6",
     "jest": "20.0.4",
     "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
     "node-sass-chokidar": "^1.2.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",

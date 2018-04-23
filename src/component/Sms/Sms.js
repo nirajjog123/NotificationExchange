@@ -33,10 +33,14 @@ class Sms extends Component {
     let tNameString = '';
     this.setState({ from: true });
 
+    //diffrentiate save and s&close button
+       const name = event.target.name;
+
     //set template name
     if(this.props.editData){
-      this.setState({ template: this.props.editData.templatename });
-      tNameString = this.props.editData.templatename;
+      this.setState({ template: this.props.editData.templateName });
+      tNameString = this.props.editData.templateName;
+      templateIdString = this.props.editData._id;
     }else if(this.props.templateId.data){
       this.setState({ template: this.props.templateId.data.templateName });
       templateIdString = this.props.templateId.data._id;
@@ -58,7 +62,9 @@ class Sms extends Component {
     }, config)
       .then((response) => {
         console.log(response);
-        this.setState({listRoute: true});
+        if(name==='close'){
+           this.setState({listRoute: true});
+        }
       })
 
   }
@@ -68,29 +74,34 @@ class Sms extends Component {
   }
   render() {
     const {listRoute} = this.state
-
-    let templateDta = this.props.editData ? this.props.editData.templatename :'';
+    let templateDta = ''
+      
+          if(this.props.editData && this.props.editData.smsTemplate){
+             templateDta =  this.props.editData.smsTemplate.message;
+          }
+            
     
   
 
     const editMessage = (this.props.editData ===undefined)? (
-      <input className="form-control" type="textArea" name="msg" required placeholder="write here"
-      onChange={this.handleChange} />
+      <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange} ></textarea>
     ) : (
-      <input className="form-control" type="textArea" name="msg" required placeholder="write here"
-      onChange={this.handleChange} value= {templateDta} />
+      <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
+      onChange={this.handleChange}   >{templateDta}</textarea>
     );
 
     return (
       <div className="margin-t-30 sms">
-        <form onSubmit={this.handleSubmit}>
+        <form> 
           
           <div className="form-group">
             <label >Message</label>
             {editMessage}
           </div>
-          <button type="submit" className="btn margin-r-20 savebtn">Save</button>
+          <button  className="btn margin-r-20 savebtn" name='save' onClick={this.handleSubmit}>Save</button>
           <button className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
+          <button  className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
         {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
       </div>
