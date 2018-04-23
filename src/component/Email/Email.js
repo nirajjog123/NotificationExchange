@@ -33,10 +33,17 @@ class Email extends Component {
     let message = this.state.msg;
     let templateIdString= '';
     let tNameString = '';
+
+    //diffrentiate save and s&close button
+    const value = event.target.value;
+    const name = event.target.name;
+
+
       //set template name
       if(this.props.editData){
-        this.setState({ template: this.props.editData.templatename });
-        tNameString = this.props.editData.templatename;
+        this.setState({ template: this.props.editData.templateName });
+        tNameString = this.props.editData.templateName;
+        templateIdString = this.props.editData._id;
       }else if(this.props.templateId.data){
         this.setState({ template: this.props.templateId.data.templateName });
         templateIdString = this.props.templateId.data._id;
@@ -57,6 +64,9 @@ class Email extends Component {
         },config)
           .then( (response) => {
             console.log(response);
+            if(name==='close'){
+              this.setState({listRoute: true});
+           }
 
       })
 
@@ -67,36 +77,65 @@ class Email extends Component {
   }
   render() {
     const {listRoute} = this.state
+    
+    let templateDta = '';
+    let templateFrom='';
+    let templateSub = '';
+    if(this.props.editData && this.props.editData.emailTemplate){
+     templateDta =  this.props.editData.emailTemplate.message ;
+     templateFrom =this.props.editData.emailTemplate.fromEmailAddress ;
+     templateSub = this.props.editData.emailTemplate.subject ;
+    }
 
-    let templateDta = this.props.editData ? this.props.editData.templatename :'';
-
+    //message
     const editMessage = (this.props.editData ===undefined)? (
-      <input className="form-control" type="textArea" name="msg" required
-      placeholder="write here" onChange={this.handleChange} />
+      <textarea className="form-control" type="textArea" name="msg" required
+      placeholder="write here" onChange={this.handleChange} ></textarea>
     ) : (
-      <input className="form-control" type="textArea" name="msg" required
-      placeholder="write here" onChange={this.handleChange} value={templateDta} />
+      <textarea className="form-control" type="textArea" name="msg" required
+      placeholder="write here" onChange={this.handleChange} >{templateDta}</textarea>
+    );
+
+    //from message
+    const editFrom = (this.props.editData ===undefined)? (
+      <textarea className="form-control" name="from"  required placeholder="from sender"
+              onChange={this.handleChange} ></textarea>
+    ) : (
+      
+      <textarea className="form-control" name="from"  required placeholder="from sender"
+              onChange={this.handleChange} >{templateFrom}</textarea>
+    );
+
+
+    //subject
+    const editSubject = (this.props.editData ===undefined)? (
+            <input className="form-control" type="text" name="subject" required
+              placeholder="email subject" onChange={this.handleChange} />
+      
+    ) : (
+      <textarea className="form-control" type="text" name="subject" required
+              placeholder="email subject" onChange={this.handleChange}  >{templateSub}</textarea>
     );
 
     return (
       <div className="margin-t-30 email">
-        <form onSubmit={this.handleSubmit}>
+        <form >
           <div className="form-group">
             <label >From</label>
-            <input className="form-control" name="from" type='email' required placeholder="from sender"
-              onChange={this.handleChange} />
+            {editFrom}
           </div>
           <div className="form-group">
             <label >Subject</label>
-            <input className="form-control" type="text" name="subject" required
-              placeholder="email subject" onChange={this.handleChange} />
+
+              {editSubject}
           </div>
           <div className="form-group">
             <label >Message</label>
             {editMessage}
           </div>
-          <button type="submit" className="btn margin-r-20 savebtn">Save</button>
+          <button type="submit" className="btn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
           <button className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
+          <button type="submit" className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
         {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
       </div>
