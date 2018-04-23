@@ -1,40 +1,32 @@
+
 import React, { Component } from 'react'
 import axios from 'axios';
-import {Redirect} from 'react-router';
+import { Redirect } from 'react-router';
 
-class Sms extends Component {
+class Queue extends Component {
   constructor(props) {
     super(props);
-   
     this.state = {
-      msg : '',
-      template :'',
-      listRoute: false
+      msg: '',
+      listRoute: false,
+      templateName: ''
     }
-    console.log(this.props)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  handleChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
-    
-    this.setState({
-      [name]: value
-    });
-  }
 
   handleSubmit(event) {
-    event.preventDefault();
+   event.preventDefault();
     let msg = this.state.msg;
     let templateIdString= '';
     let tNameString = '';
     this.setState({ from: true });
 
     //diffrentiate save and s&close button
-       const name = event.target.name;
+    const value = event.target.value;
+    const name = event.target.name;
 
     //set template name
     if(this.props.editData){
@@ -56,8 +48,8 @@ class Sms extends Component {
     };
 
 
-    axios.patch('api/template/sms/'+ templateIdString , {
-      smsTemplate: { message: msg },
+    axios.patch('api/template/web/'+ templateIdString , {
+      webTemplate: { message: msg },
       templateName: configuredTName
     }, config)
       .then((response) => {
@@ -72,41 +64,47 @@ class Sms extends Component {
   handleCancel(){
     this.setState({listRoute: true});
   }
+
+  handleChange(event) {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  }
   render() {
+
+
     const {listRoute} = this.state
     let templateDta = ''
       
           if(this.props.editData && this.props.editData.smsTemplate){
              templateDta =  this.props.editData.smsTemplate.message;
           }
-            
-    
-  
 
     const editMessage = (this.props.editData ===undefined)? (
       <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
       onChange={this.handleChange} ></textarea>
     ) : (
       <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
-      onChange={this.handleChange}   >{templateDta}</textarea>
+      onChange={this.handleChange}  >{templateDta}</textarea>
     );
-
     return (
-      <div className="margin-t-30 sms">
-        <form> 
-          
+      <div className="margin-t-30 web">
+        <form >
+         
           <div className="form-group">
             <label >Message</label>
             {editMessage}
           </div>
-          <button  className="btn margin-r-20 savebtn" name='save' onClick={this.handleSubmit}>Save</button>
-          <button className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
-          <button  className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
+          <button  className="btn  cancelbtn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
+          <button  className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
+          <button  className="btn cancelbtn  savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
-        {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
+        {listRoute && <Redirect to={{ pathname: '/notification' }} />}
       </div>
     );
   }
 }
 
-export default Sms;
+export default Queue;

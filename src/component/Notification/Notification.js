@@ -100,7 +100,6 @@ class Notification extends Component {
                     pagination={true}>
                     <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
-                    {/* <TableHeaderColumn dataField='message' dataAlign="center">Messsage</TableHeaderColumn> */}
                     <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
                     <TableHeaderColumn dataField='creationDate' dataAlign="center">Last updated</TableHeaderColumn>
                     <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>

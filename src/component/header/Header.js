@@ -31,15 +31,17 @@ class Header extends Component {
   // }
 }
 
-  onLogout(event){
-    localStorage.clear();
-    this.setState({logout :true})
-  }
+onLogout(event){
+  localStorage.clear();
+  this.setState({logout :true});
+  document.getElementById("Header").style.display = "none";
+}
+
   render() {
     const {notification} = this.state;
     const {dashboard ,analytics,logout} = this.state;
     return (
-      <div className="Header">
+      <div className="Header" id="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <a className="navbar-brand" to="/notification" onClick={this.onMessageClick} id='dashboard'>Share Market</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

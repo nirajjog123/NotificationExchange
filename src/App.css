@@ -57,6 +57,7 @@ background: #343A40;
 border:none;
 outline: none;
 color: #fff;
+text-align: left;
 }
 
 .msgconfig .msgbtn:hover{
@@ -69,7 +70,7 @@ color: #fff;
 background: #343A40;
 height: 600px;
 }
-.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn{
+.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn,.web .cancelbtn,.queue .cancelbtn,.msgConfig .cancelbtn{
 width: 100px;
 background: #343A40;
 color: #fff;

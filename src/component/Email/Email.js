@@ -134,7 +134,7 @@ class Email extends Component {
             {editMessage}
           </div>
           <button type="submit" className="btn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
-          <button className="btn cancelbtn" onClick={this.handleCancel}>Cancel</button>
+          <button className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
           <button type="submit" className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
         {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
