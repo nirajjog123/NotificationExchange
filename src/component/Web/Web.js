@@ -101,12 +101,12 @@ class Queue extends Component {
         <form >
          
           <div className="form-group">
-            <label >Message</label>
+            <label >Messageeee</label>
             {editMessage}
           </div>
           <button  className="btn  cancelbtn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
           <button  className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
-          <button  className="btn cancelbtn  savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
+          <button  className="btn cancelbtn  savebtn" name='close' onClick={this.handleSubmit}>Save & Close</button>
         </form>
         {listRoute && <Redirect to={{ pathname: '/notification' }} />}
       </div>
