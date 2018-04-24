@@ -1,25 +1,35 @@
 * {
   box-sizing: border-box;
-  }
-  body {
+}
+body {
   background: #eee;
-  }
-  p {
+}
+p {
   text-align: center;
-  }
-  button {
+}
+button {
   margin-left: 1em;
   background: #159fff;
   border: none;
   padding: 0.5em 2em;
   color: white;
   text-transform: uppercase;
-  }
-  button:hover {
+}
+button:hover {
   background: #0094fb;
-  }
-  #chart {
+}
+#chart {
   background: #fff;
   width: 90%;
   margin: 1em auto;
-  }
+}
+.graphinfo{
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background: #fff;
+}
+.graphinfo p{
+ font-size: 9px;
+ padding: 5px;
+}
