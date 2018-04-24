@@ -4,6 +4,7 @@ import { router,Redirect,Route } from 'react-router';
 import { Link } from 'react-router-link';
 import axios from 'axios';
 import '../header/Header.css';
+import { NotificationContainer } from 'react-notifications';
 
 
 class Header extends Component {
@@ -69,6 +70,7 @@ onLogout(event){
         {dashboard &&<Redirect to={{ pathname: '/dashboard' }} />}
         {analytics &&<Redirect to={{ pathname: '/analytics' }} />}
         {logout &&<Redirect to={{ pathname: '/' }} />}
+        <NotificationContainer/>
       </div>
 
     );
