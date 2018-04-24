@@ -84,10 +84,10 @@ class Queue extends Component {
 
     const { listRoute } = this.state
     let templateDta = ''
-
-    if (this.props.editData && this.props.editData.smsTemplate) {
-      templateDta = this.props.editData.smsTemplate.message;
-    }
+      
+          if(this.props.editData && this.props.editData.deviceTemplate){
+             templateDta =  this.props.editData.deviceTemplate.message;
+          }
 
     const editMessage = (this.props.editData === undefined) ? (
       <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"

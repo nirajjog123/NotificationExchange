@@ -88,15 +88,16 @@ class Notification extends Component {
                     <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#3a3a40', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }}
-                        striped={true} hover={true} search searchPlaceholder="Search" version='4'
-                        pagination={true}>
-                        <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
-                        <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
-                        <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
-                        <TableHeaderColumn dataField='creationDate' dataAlign="center">Last updated</TableHeaderColumn>
-                        <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>
-                        <TableHeaderColumn dataField='delete' dataAlign="center" dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
+                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#3a3a40', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }} 
+                    striped={true} hover={true} search searchPlaceholder="Search" version='4'
+                    pagination={true}>
+                    <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
+                    <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
+                    <TableHeaderColumn dataField='creationDate' dataAlign="center">Last updated</TableHeaderColumn>
+                    <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>
+                    <TableHeaderColumn dataField='delete' dataAlign="center" disabled 
+                    dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 {create_Msg && <Redirect to={{ pathname: '/message' }} />}

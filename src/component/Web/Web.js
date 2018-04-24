@@ -85,8 +85,8 @@ class Queue extends Component {
     const {listRoute} = this.state
     let templateDta = ''
       
-          if(this.props.editData && this.props.editData.smsTemplate){
-             templateDta =  this.props.editData.smsTemplate.message;
+          if(this.props.editData && this.props.editData.webTemplate){
+             templateDta =  this.props.editData.webTemplate.message;
           }
 
     const editMessage = (this.props.editData ===undefined)? (
