@@ -14,8 +14,7 @@ class Notification extends Component {
             create_Msg: false,
             data: [],
             edit: false,
-            selectedCandidate: {},
-            mug: "mugdha"
+            selectedCandidate: {}          
         };
         this.handleCreate = this.handleCreate.bind(this);
         this.editNotificationButton = this.editNotificationButton.bind(this);
