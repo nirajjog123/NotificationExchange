@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './analytics.css';
 import Graphcombo from '../graph/graphcombo';
+import Graphcombo2 from '../graph/graphcombo2';
+import chartStaticData from "../../chartsStaticData/chartData"
 
 
 class Analytics extends Component {
@@ -26,8 +28,9 @@ class Analytics extends Component {
       <div className="col-md-12 col-lg-12 dashboard ">
         <div className="margin-t-75">
           <div className="margin-t-30"><Graphcombo /></div>
-          <div className="margin-t-30"><Graphcombo /></div>
-          <div className="margin-t-30"><Graphcombo /></div>
+          <div className="margin-t-30"><Graphcombo2  chartStaticData={chartStaticData.smsChartsData}/></div>
+          <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.emailChartsData}/></div>
+          <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.pushChartsData}/></div>
         </div>
       </div>
     );
