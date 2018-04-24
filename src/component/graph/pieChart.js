@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Chart from 'react-c3js'
 import 'c3/c3.css';
 
-class Graph5 extends Component {
+class PieChart extends Component {
   constructor(props) {
     super(props);    
     this.state = {
@@ -29,4 +29,4 @@ class Graph5 extends Component {
   }
 }
 
-export default Graph5;
+export default PieChart;

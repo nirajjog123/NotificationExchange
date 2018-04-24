@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import Chart from 'react-c3js'
 import 'c3/c3.css';
 
-class Graph3 extends Component {
+class BarChart extends Component {
   constructor(props) {
     super(props);    
-    this.state = {
-      chartType: 'Bar'
-    };
     this.data = {
       x:'x', 
      columns: this.props.barChart,
@@ -21,7 +18,7 @@ class Graph3 extends Component {
        x: {
            type: 'timeseries',
            tick: {
-           format: '%Y-%m-%d'
+           format: '%m-%d'
            }
        }    
    }
@@ -32,11 +29,11 @@ class Graph3 extends Component {
         <div id="testchart"></div>
         <Chart
           data={this.data}
-          chartType={this.state.chartType} axis={this.axisData} />
+          axis={this.axisData} />
             
       </div>
     );
   }
 }
 
-export default Graph3;
+export default BarChart;

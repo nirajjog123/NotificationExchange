@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Chart from 'react-c3js'
 import 'c3/c3.css';
 
-class Graph4 extends Component {
+class AreaChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class Graph4 extends Component {
         type: 'timeseries',
         localtime: false,
         tick: {
-          format: '%Y-%m-%d %H:%M:%S'
+          format: '%H:%M:%S'
         }
       }
     }
@@ -41,4 +41,4 @@ class Graph4 extends Component {
   }
 }
 
-export default Graph4;
+export default AreaChart;
