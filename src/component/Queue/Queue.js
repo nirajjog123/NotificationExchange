@@ -20,9 +20,9 @@ class Queue extends Component {
 
 
   handleSubmit(event) {
-   event.preventDefault();
+    event.preventDefault();
     let msg = this.state.msg;
-    let templateIdString= '';
+    let templateIdString = '';
     let tNameString = '';
     this.setState({ from: true });
 
@@ -31,11 +31,11 @@ class Queue extends Component {
     const name = event.target.name;
 
     //set template name
-    if(this.props.editData){
+    if (this.props.editData) {
       this.setState({ template: this.props.editData.templateName });
       tNameString = this.props.editData.templateName;
       templateIdString = this.props.editData._id;
-    }else if(this.props.templateId.data){
+    } else if (this.props.templateId.data) {
       this.setState({ template: this.props.templateId.data.templateName });
       templateIdString = this.props.templateId.data._id;
       tNameString = this.props.templateId.data.templateName;
@@ -43,33 +43,33 @@ class Queue extends Component {
 
 
     let configuredTName = tNameString;
-    
+
     //set header for authorization
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
     };
 
 
-    axios.patch('api/template/device/'+ templateIdString , {
+    axios.patch('api/template/device/' + templateIdString, {
       deviceTemplate: { message: msg },
       templateName: configuredTName
     }, config)
       .then((response) => {
         NotificationManager.info('Mobile PUSH Section', 'Mobile PUSH template stored successfully', 3000);
         console.log(response);
-        if(name==='close'){
-           this.setState({listRoute: true});
+        if (name === 'close') {
+          this.setState({ listRoute: true });
         }
       })
       .catch(function (error) {
         NotificationManager.warning('Error in Device PUSH template saving', 3000);
-        console.log('ERROR',error);
-      });       
+        console.log('ERROR', error);
+      });
 
   }
 
-  handleCancel(){
-    this.setState({listRoute: true});
+  handleCancel() {
+    this.setState({ listRoute: true });
   }
 
   handleChange(event) {
@@ -82,31 +82,30 @@ class Queue extends Component {
   render() {
 
 
-    const {listRoute} = this.state
+    const { listRoute } = this.state
     let templateDta = ''
-      
-          if(this.props.editData && this.props.editData.smsTemplate){
-             templateDta =  this.props.editData.smsTemplate.message;
-          }
 
-    const editMessage = (this.props.editData ===undefined)? (
+    if (this.props.editData && this.props.editData.smsTemplate) {
+      templateDta = this.props.editData.smsTemplate.message;
+    }
+
+    const editMessage = (this.props.editData === undefined) ? (
       <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
-      onChange={this.handleChange} ></textarea>
+        onChange={this.handleChange} ></textarea>
     ) : (
-      <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
-      onChange={this.handleChange}  >{templateDta}</textarea>
-    );
+        <textarea className="form-control" type="textArea" name="msg" required placeholder="write here"
+          onChange={this.handleChange}  >{templateDta}</textarea>
+      );
     return (
       <div className="margin-t-30 queue">
         <form >
-         
           <div className="form-group">
             <label >Message</label>
             {editMessage}
           </div>
-          <button  className="btn  cancelbtn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>
-          <button  className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
-          <button  className="btn  cancelbtn  savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
+          <button className="btn cancelbtn margin-r-20" onClick={this.handleSubmit}>Save</button>
+          <button className="btn cancelbtn margin-r-20" onClick={this.handleCancel}>Cancel</button>
+          <button className="btn cancelbtn" name='close' onClick={this.handleSubmit}>Save & Close</button>
         </form>
         {listRoute && <Redirect to={{ pathname: '/notification' }} />}
       </div>

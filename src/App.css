@@ -73,10 +73,14 @@ body{
   background: #343A40;
   height: 600px;
 }
-.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn{
-  width: 100px;
+.notify .notificationBtn,.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn,.msgConfig .okbtn,.queue .cancelbtn,.web .cancelbtn{
+  width: 120px;
   background: #343A40;
   color: #fff;
+}
+.email label,.sms label,.msgConfig label,.web label,.msgconfigmain label,.queue label{
+  color: #343A40;
+  font-weight: bold;
 }
 /*dashboard*/
 .dashboard{
