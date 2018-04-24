@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Redirect} from 'react-router';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 class Sms extends Component {
   constructor(props) {
@@ -11,7 +13,6 @@ class Sms extends Component {
       template :'',
       listRoute: false
     }
-    console.log(this.props)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -61,12 +62,16 @@ class Sms extends Component {
       templateName: configuredTName
     }, config)
       .then((response) => {
+        NotificationManager.info('SMS Section', 'SMS stored successfully', 3000);
         console.log(response);
         if(name==='close'){
            this.setState({listRoute: true});
         }
       })
-
+      .catch(function (error) {
+        NotificationManager.warning('Warning message', 'Error in SMS saving', 3000);
+        console.log('ERROR',error);
+      });   
   }
 
   handleCancel(){
@@ -93,6 +98,8 @@ class Sms extends Component {
 
     return (
       <div className="margin-t-30 sms">
+              
+
         <form> 
           
           <div className="form-group">
@@ -104,6 +111,7 @@ class Sms extends Component {
           <button  className="btn margin-r-20 savebtn" name='close' onClick={this.handleSubmit}>Save&Close</button>
         </form>
         {listRoute &&<Redirect to={{ pathname: '/notification' }} />}
+        
       </div>
     );
   }

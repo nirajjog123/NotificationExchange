@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Redirect} from 'react-router';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 class Email extends Component {
   constructor(props) {
@@ -63,13 +65,16 @@ class Email extends Component {
                 templateName:configuredTName
         },config)
           .then( (response) => {
+            NotificationManager.info('Email Section', 'Email template stored successfully', 3000);
             console.log(response);
             if(name==='close'){
               this.setState({listRoute: true});
-           }
-
-      })
-
+             }
+          })
+          .catch(function (error) {
+            NotificationManager.warning('Warning message', 'Error in Email template saving', 3000);
+            console.log('ERROR',error);
+          });       
   }
 
   handleCancel(){

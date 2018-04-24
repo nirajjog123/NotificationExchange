@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 class Queue extends Component {
   constructor(props) {
@@ -53,11 +55,16 @@ class Queue extends Component {
       templateName: configuredTName
     }, config)
       .then((response) => {
+        NotificationManager.info('Mobile PUSH Section', 'Mobile PUSH template stored successfully', 3000);
         console.log(response);
         if(name==='close'){
            this.setState({listRoute: true});
         }
       })
+      .catch(function (error) {
+        NotificationManager.warning('Error in Device PUSH template saving', 3000);
+        console.log('ERROR',error);
+      });       
 
   }
 

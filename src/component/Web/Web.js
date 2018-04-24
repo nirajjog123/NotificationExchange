@@ -1,3 +1,5 @@
+import { NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 import React, { Component } from 'react'
 import axios from 'axios';
@@ -53,11 +55,16 @@ class Queue extends Component {
       templateName: configuredTName
     }, config)
       .then((response) => {
+        NotificationManager.info('Mobile PUSH Section', 'WEB PUSH template stored successfully', 3000);
         console.log(response);
         if(name==='close'){
            this.setState({listRoute: true});
         }
       })
+      .catch(function (error) {
+        NotificationManager.warning('Error in WEB PUSH template saving', 3000);
+        console.log('ERROR',error);
+      });       
 
   }
 
