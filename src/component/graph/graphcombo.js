@@ -10,11 +10,17 @@ import chartStaticData from "../../chartsStaticData/chartData"
 class Graphcombo extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+    
+    };
+
   }
+
   render() {
     return (
       <div className="graphcombo">
         <div class="row">
+         
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
