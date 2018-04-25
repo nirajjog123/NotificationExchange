@@ -10,10 +10,6 @@ import chartStaticData from "../../chartsStaticData/chartData"
 class Graphcombo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    
-    };
-
   }
 
   render() {
@@ -24,31 +20,37 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Responses</div>
+                <div class="mr-5">Notification Response timings</div>
               </div>
               <div>
                 <AreaChart areaChart={chartStaticData.chartData.areaChart} />
               </div>
             </div>
             <div className="margin-t-20 clr">
-              <Graphinfo />
+              <Graphinfo boxText = {chartStaticData.chartTextBox.areaSummaryInfo}/>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Sent Today</div>
+                <div class="mr-5">Notification Responses  </div>
               </div>
               <PieChart pieChart={chartStaticData.chartData.pieChart} />
             </div>
+            <div className="margin-t-20 clr">
+              <Graphinfo boxText = {chartStaticData.chartTextBox.pieSummaryInfo}/>
+            </div>            
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification bar</div>
+                <div class="mr-5">Notification Sent over different Channels</div>
               </div>
               <BarChart barChart={chartStaticData.chartData.barChart} />
             </div>
+            <div className="margin-t-20 clr">
+              <Graphinfo boxText = {chartStaticData.chartTextBox.barSummaryInfo}/>
+            </div>            
           </div>
         </div>
       </div>
