@@ -22,6 +22,7 @@ class Notification extends Component {
         this.editData = this.editData.bind(this);
         this.deleteData = this.deleteData.bind(this);
         this.toggleOnOffButton = this.toggleOnOffButton.bind(this);
+        this.readableData = this.readableData.bind(this);
 
 
     }
@@ -30,20 +31,27 @@ class Notification extends Component {
         // <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edit')}>Edit</button>;
     }
     toggleOnOffButton(cell, row) {
+        let rowIcons = row;
         return <div className="margin-l-45">
-            <span className="lft">
+            {rowIcons.smsTemplate &&<span className="lft">
                 <div><i class="fa fa-envelope-open text-success" aria-hidden="true"></i></div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
-            </span>
-            <span className="lft">
+            </span>}
+           {rowIcons.deviceTemplate && <span className="lft">
                 <div> <i class="fa fa-bell text-primary margin-lr-25" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
-            </span>
-            <span className="lft">
+            </span>}
+            {rowIcons.emailTemplate &&<span className="lft">
                 <div> <i class="fa fa-envelope text-gray" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
-            </span>
+            </span>}
         </div>
+    }
+
+    readableData(cell,row){
+        let dateObj = new Date(row.creationDate);
+        return dateObj.toDateString();
+
     }
     deleteNotificationButton(cell, row) {
         return <i class="fa fa-trash text-gray fontsize25" aria-hidden="true" onClick={() => this.deleteData(row, 'Delete')}></i>
@@ -93,7 +101,7 @@ class Notification extends Component {
                     <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
                     <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
-                    <TableHeaderColumn dataField='creationDate' dataAlign="center">Last updated</TableHeaderColumn>
+                    <TableHeaderColumn dataField='creationDate' dataAlign="center" dataFormat={this.readableData}>Last updated</TableHeaderColumn>
                     <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>
                     <TableHeaderColumn dataField='delete' dataAlign="center" disabled 
                     dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
