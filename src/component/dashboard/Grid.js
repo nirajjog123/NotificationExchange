@@ -10,17 +10,22 @@ class Grid extends Component {
         super(props);
         this.state = {
             data: [],
-            analytics: false
+            analytics: false,
+            analyticsdata :{}
         }
         this.analyticsInfo = this.analyticsInfo.bind(this);
     }
     analyticsInfo(cell, row) {
         return <button className="btn notificationBtn" id='analytics' onClick={() => this.openAnalytics(row, 'Analytics')}>Show Analytics</button>;
     }
-    openAnalytics(event, name) {
+    openAnalytics(rowdata, name) {      
         if (name === 'Analytics') {
             this.setState({ analytics: true })
         }
+        this.setState({
+            analyticsdata:rowdata
+        })
+     
     }
     componentDidMount = () => {
         var self = this;
@@ -34,9 +39,9 @@ class Grid extends Component {
     };
 
     render() {
-        const { analytics } = this.state;
+        const { analytics,analyticsdata } = this.state;
         return (
-            <div>
+            <div className="grid">
                 <BootstrapTable data={this.state.data} options={{ noDataText: 'This is custom text for empty data' }} striped={true} hover={true}>
                     <TableHeaderColumn dataField='id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='templatename' dataAlign="center">Template Name</TableHeaderColumn>
@@ -44,7 +49,8 @@ class Grid extends Component {
                     <TableHeaderColumn dataField='lastupdated' dataAlign="center">Last updated</TableHeaderColumn>
                     <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.analyticsInfo}>Analytics</TableHeaderColumn>
                 </BootstrapTable>
-                {analytics && <Redirect to={{ pathname: '/analytics' }} />}
+                {analytics && <Redirect to={{ pathname: '/analytics',
+                 state:analyticsdata }} />}
             </div>
         );
     }

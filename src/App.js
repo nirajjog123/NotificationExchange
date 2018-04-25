@@ -11,19 +11,16 @@ import Header from './component/header/Header';
 import Analytics from './component/analytics/analytics';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import './App.css';
-// import 'bootstrap/dist/css/bootstrap.css';
-//import 'open-iconic/font/css/open-iconic-foundation.css';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class App extends Component {
+class App extends Component {  
   render() {
     return (
       <div>
-       
         <Router>
           <div className="App">
-          <Header/>
+            <Header />
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/dashboard" component={Dashboard} />
