@@ -100,7 +100,7 @@ class Dashboard extends Component {
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <div class="card">
         <div class="card-body">
           <div class="mr-5">Notification Sent Today</div>
@@ -108,7 +108,7 @@ class Dashboard extends Component {
         <Graph />
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
       <div class="card">
         <div class="card-body">
           <div class="mr-5">Notification Analysis</div>
