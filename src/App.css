@@ -78,6 +78,11 @@ body{
   background: #343A40;
   color: #fff;
 }
+.grid .notificationBtn{
+width: 150px;
+background: #343A40;
+color: #fff;
+}
 .email label,.sms label,.msgConfig label,.web label,.msgconfigmain label,.queue label{
   color: #343A40;
   font-weight: bold;

@@ -1,37 +1,38 @@
 * {
-  box-sizing: border-box;
-}
-body {
-  background: #eee;
-}
-p {
-  text-align: center;
-}
-button {
-  margin-left: 1em;
-  background: #159fff;
-  border: none;
-  padding: 0.5em 2em;
-  color: white;
-  text-transform: uppercase;
-}
-button:hover {
-  background: #0094fb;
-}
-#chart {
-  background: #fff;
-  width: 90%;
-  margin: 1em auto;
-}
-.graphinfo{
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  background: #fff;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-.graphinfo p{
- font-size: 9px;
- padding: 5px;
-}
+    box-sizing: border-box;
+  }
+  body {
+    background: #eee;
+  }
+  p {
+    text-align: center;
+  }
+  button {
+    margin-left: 1em;
+    background: #159fff;
+    border: none;
+    padding: 0.5em 2em;
+    color: white;
+    text-transform: uppercase;
+  }
+  button:hover {
+    background: #0094fb;
+  }
+  #chart {
+    background: #fff;
+    width: 90%;
+    margin: 1em auto;
+  }
+  .graphinfo{
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    background: #fff;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+  }
+  .graphinfo p{
+   font-size: 9px;
+   padding: 5px;
+  }
+  
