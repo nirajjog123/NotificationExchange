@@ -15,9 +15,8 @@ class Graphcombo extends Component {
   render() {
     return (
       <div className="graphcombo">
-        <div class="row">
-         
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="row">         
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="card">
               <div class="card-body">
                 <div class="mr-5">Notification Response timings</div>
@@ -30,7 +29,7 @@ class Graphcombo extends Component {
               <Graphinfo boxText = {chartStaticData.chartTextBox.areaSummaryInfo}/>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
                 <div class="mr-5">Notification Responses  </div>
@@ -41,7 +40,7 @@ class Graphcombo extends Component {
               <Graphinfo boxText = {chartStaticData.chartTextBox.pieSummaryInfo}/>
             </div>            
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
                 <div class="mr-5">Notification Sent over different Channels</div>

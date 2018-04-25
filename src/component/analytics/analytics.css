@@ -1,0 +1,19 @@
+.card-body{
+    font-weight: 600;
+    font-size: 17px; 
+  }
+  #accordion{
+    margin-bottom:30px;
+  } 
+
+  #accordion .card-header{
+    background-color: #343a40;
+  } 
+  #accordion .card a{
+    color: #fff;
+    text-decoration: underline;
+  }   
+  .analytics .notificationBtn{
+    background: #343A40;
+    color: #fff;
+  }

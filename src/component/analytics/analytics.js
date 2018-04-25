@@ -14,21 +14,58 @@ class Analytics extends Component {
     this.showChartDetails = this.showChartDetails.bind(this);
   }
   showChartDetails() {
-    this.setState({ hidebox: !this.state.hidebox});
+    this.setState({ hidebox: !this.state.hidebox });
   }
   render() {
     return (
-      <div className="col-md-12 col-lg-12 dashboard ">
+      <div className="col-md-12 col-lg-12 analytics ">
+
         <div className="margin-t-75">
+
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <button className="btn notificationBtn" onClick={this.showChartDetails}>More details about charts</button>
           </div>
-          <div className="margin-t-30"><Graphcombo /></div>
+          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div className="margin-t-30"><Graphcombo /></div>
+          </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             {this.state.hidebox && <div>
-              <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.smsChartsData} /></div>
-              <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.emailChartsData} /></div>
-              <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.pushChartsData} /></div>
+
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                      SMS</a>
+                  </div>
+                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                      <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.smsChartsData} /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                      EMAIL</a>
+                  </div>
+                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.emailChartsData} /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                      PUSH</a>
+                  </div>
+                  <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div className="margin-t-30"><Graphcombo2 chartStaticData={chartStaticData.pushChartsData} /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>}
           </div>
         </div>

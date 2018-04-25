@@ -28,6 +28,8 @@ button:hover {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   background: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 .graphinfo p{
  font-size: 9px;

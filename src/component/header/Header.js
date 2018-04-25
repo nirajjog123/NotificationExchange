@@ -20,8 +20,7 @@ class Header extends Component {
     this.onLogout = this.onLogout.bind(this);
   }
   onMessageClick(event) {
-    let {logout} = this.state;
-    // if(!logout){
+    let {logout} = this.state;   
     if (event.target.id === 'dashboard') {
       this.setState({ dashboard: true,notification: false,analytics :false})
     } else if (event.target.id === 'message') {
@@ -29,7 +28,6 @@ class Header extends Component {
     }else if (event.target.id === 'analytics') {
       this.setState({ notification: false,dashboard: false,analytics :true})
     }   
-  // }
 }
 
 onLogout(event){
@@ -44,7 +42,7 @@ onLogout(event){
     return (
       <div className="Header" id="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-          <a className="navbar-brand" to="/notification" onClick={this.onMessageClick} id='dashboard'>Share Market</a>
+          <a className="navbar-brand" to="/notification" onClick={this.onMessageClick} id='dashboard'>Notification Exchange</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

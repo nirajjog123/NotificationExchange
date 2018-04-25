@@ -27,7 +27,7 @@ class Notification extends Component {
     }
     editNotificationButton(cell, row) {
         return <i class="fa fa-pencil text-primary fontsize25" aria-hidden="true" onClick={() => this.editData(row, 'Edittt')}></i>
-        // <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edittt')}>Edit</button>;
+        // <button className="btn notificationBtn" onClick={() => this.editData(row, 'Edit')}>Edit</button>;
     }
     toggleOnOffButton(cell, row) {
         return <div className="margin-l-45">

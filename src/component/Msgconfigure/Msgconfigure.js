@@ -15,12 +15,12 @@ class Message extends Component {
       sms: true,
       email: false,
       queue: false,
-      web:false,
-      showMsgDom:false
-    };  
-    this.handleCheck = this.handleCheck.bind(this);   
-    this.setTemplate = this.setTemplate.bind(this);   
-    this.handleChange = this.handleChange.bind(this);   
+      web: false,
+      showMsgDom: false
+    };
+    this.handleCheck = this.handleCheck.bind(this);
+    this.setTemplate = this.setTemplate.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleCheck(event) {
@@ -41,12 +41,8 @@ class Message extends Component {
     let tName = this.state.template;
     let respData = '';
 
-    event.target.disabled =true
-    this.setState({ showMsgDom:true});
-
-    // document.getElementById("msgOption").style.display = "";
-    // document.getElementById("msgDOM").style.display = "";
-
+    event.target.disabled = true
+    this.setState({ showMsgDom: true });
 
     let config = {
       headers: { 'authorization': localStorage.getItem('tokenId') }
@@ -73,10 +69,10 @@ class Message extends Component {
   render() {
     const { sms } = this.state
     const { email } = this.state
-    const { queue ,tempId,web } = this.state
-     let {showMsgDom} = this.state 
-    let edtTempName = this.props.location.state ? this.props.location.state.templateName:'';
-    if(edtTempName){
+    const { queue, tempId, web } = this.state
+    let { showMsgDom } = this.state
+    let edtTempName = this.props.location.state ? this.props.location.state.templateName : '';
+    if (edtTempName) {
       showMsgDom = true;
     }
     //conditional render for template name
@@ -95,8 +91,8 @@ class Message extends Component {
       <div className="margin-t-55 msgconfig">
 
         <div className="row">
-          <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">        
-           {showMsgDom &&  <div className="graybkg" id='msgOption' >
+          <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">
+            {showMsgDom && <div className="graybkg" id='msgOption' >
               <div>
                 <button onClick={this.handleCheck} name='sms' className="card-body btn-block msgbtn">SMS</button>
               </div>
@@ -116,11 +112,11 @@ class Message extends Component {
               <label>Template Name</label>
               {editTempRender}
             </div>
-           {showMsgDom &&  <div className={(tempId  ? 'show' : 'hidden')}  >           
-              {sms && <Sms editData={ this.props.location.state} templateId={tempId}/>}
-              {email && <Email editData={ this.props.location.state} templateId={tempId} />}
-              {queue && <Queue editData={ this.props.location.state} templateId={tempId} />}
-              {web && <Web editData={ this.props.location.state} templateId={tempId} />}
+            {showMsgDom && <div className={(tempId ? 'show' : 'hidden')}  >
+              {sms && <Sms editData={this.props.location.state} templateId={tempId} />}
+              {email && <Email editData={this.props.location.state} templateId={tempId} />}
+              {queue && <Queue editData={this.props.location.state} templateId={tempId} />}
+              {web && <Web editData={this.props.location.state} templateId={tempId} />}
             </div>}
           </div>
         </div>
