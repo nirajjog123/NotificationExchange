@@ -29,10 +29,11 @@ class Analytics extends Component {
 
         <div className="margin-t-65">
           <div className="row">
-            <button className="btn notificationBtn" onClick={this.showChartDetails}>More details about charts</button>
-
+            {/* <button className="btn notificationBtn"  onClick={this.showChartDetails}>More details about charts</button> */}
+            
+          <a class="btn notificationBtn page-scroll page-scroll" href="#accordion" onClick={this.showChartDetails}>More details about charts</a>
             <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-              <h3>Template Name - {templatename}</h3>
+             {templatename && <h3>Template Name - {templatename}</h3>}
             </div>
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div>

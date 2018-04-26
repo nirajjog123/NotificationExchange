@@ -59,6 +59,7 @@ class Grid extends Component {
                     <TableHeaderColumn dataField='id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='templatename' dataAlign="center">Template Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='message' dataAlign="center">Messsage</TableHeaderColumn>
+                     <TableHeaderColumn dataField='lastupdated' dataAlign="center">Last Sent</TableHeaderColumn>
                     <TableHeaderColumn dataField='lastupdated' dataAlign="center">Last updated</TableHeaderColumn>
                     <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.analyticsInfo}>Analytics</TableHeaderColumn>
                 </BootstrapTable>
