@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { router,Redirect,Route } from 'react-router';
+import { router, Redirect, Route } from 'react-router';
 import { Link } from 'react-router-link';
 import axios from 'axios';
 import '../header/Header.css';
@@ -12,33 +12,33 @@ class Header extends Component {
     super(props);
     this.state = {
       notification: false,
-      dashboard : false,
-      analytics :false,
-      logout : false
+      dashboard: false,
+      analytics: false,
+      logout: false
     };
     this.onMessageClick = this.onMessageClick.bind(this);
     this.onLogout = this.onLogout.bind(this);
   }
   onMessageClick(event) {
-    let {logout} = this.state;   
+    let { logout } = this.state;
     if (event.target.id === 'dashboard') {
-      this.setState({ dashboard: true,notification: false,analytics :false})
+      this.setState({ dashboard: true, notification: false, analytics: false })
     } else if (event.target.id === 'message') {
-      this.setState({ notification: true,dashboard: false,analytics :false})
-    }else if (event.target.id === 'analytics') {
-      this.setState({ notification: false,dashboard: false,analytics :true})
-    }   
-}
+      this.setState({ notification: true, dashboard: false, analytics: false })
+    } else if (event.target.id === 'analytics') {
+      this.setState({ notification: false, dashboard: false, analytics: true })
+    }
+  }
 
-onLogout(event){
-  localStorage.clear();
-  this.setState({logout :true});
-  document.getElementById("Header").style.display = "none";
-}
+  onLogout(event) {
+    localStorage.clear();
+    this.setState({ logout: true });
+    document.getElementById("Header").style.display = "none";
+  }
 
   render() {
-    const {notification} = this.state;
-    const {dashboard ,analytics,logout} = this.state;
+    const { notification } = this.state;
+    const { dashboard, analytics, logout } = this.state;
     return (
       <div className="Header" id="Header">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -48,6 +48,10 @@ onLogout(event){
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <a className="nav-link" onClick={this.onMessageClick} id='dashboard'>
+                  Dashboard </a>
+              </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={this.onMessageClick} id='message'>
                   Messages </a>
@@ -64,11 +68,11 @@ onLogout(event){
             </ul>
           </div>
         </nav>
-        {notification &&<Redirect to={{ pathname: '/notification' }} />}
-        {dashboard &&<Redirect to={{ pathname: '/dashboard' }} />}
-        {analytics &&<Redirect to={{ pathname: '/analytics' }} />}
-        {logout &&<Redirect to={{ pathname: '/' }} />}
-        <NotificationContainer/>
+        {notification && <Redirect to={{ pathname: '/notification' }} />}
+        {dashboard && <Redirect to={{ pathname: '/dashboard' }} />}
+        {analytics && <Redirect to={{ pathname: '/analytics' }} />}
+        {logout && <Redirect to={{ pathname: '/' }} />}
+        <NotificationContainer />
       </div>
 
     );

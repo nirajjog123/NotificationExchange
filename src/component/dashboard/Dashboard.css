@@ -1,0 +1,8 @@
+.dashboard  .card-body{
+    background: #343A40;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 3px 3px 0px 0px;
+    font-size: 15px;
+  }

@@ -47,7 +47,7 @@ class Dashboard extends Component {
   }    
   render() {
     return (
-<div className="col-md-12 col-lg-12 dashboard ">
+<div className="col-md-12 col-lg-12 dashboard">
 
   <div className="row dashboardalignment margin-t-75">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -126,7 +126,7 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <span class="widget-icon">
-                <i className="fa fa-envelope text-gray"></i>                        
+                <i className="fa fa-envelope text-orange"></i>                        
               </span>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
@@ -177,8 +177,8 @@ class Dashboard extends Component {
   <div class="row margin-t-30">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="card">
-        <div class="card-body marginauto">
-          <div class="mr-5">Todays Top 5 Notifications</div>
+        <div class="card-body">
+          <div>Todays Top 5 Notifications</div>
         </div>
         <Grid />
       </div>

@@ -42,7 +42,7 @@ class Notification extends Component {
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
             {rowIcons.emailTemplate &&<span className="lft">
-                <div> <i class="fa fa-envelope text-gray" aria-hidden="true"></i> </div>
+                <div> <i class="fa fa-envelope text-orange" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
         </div>
@@ -54,7 +54,7 @@ class Notification extends Component {
 
     }
     deleteNotificationButton(cell, row) {
-        return <i class="fa fa-trash text-gray fontsize25" aria-hidden="true" onClick={() => this.deleteData(row, 'Delete')}></i>
+        return <i class="fa fa-trash text-orange fontsize25" aria-hidden="true" onClick={() => this.deleteData(row, 'Delete')}></i>
         // <button className="btn notificationBtn" onClick={() => this.deleteData(row, 'Delete')}>Delete</button>
     }
     editData(row) {
