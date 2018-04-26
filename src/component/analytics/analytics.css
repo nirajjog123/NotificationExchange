@@ -1,3 +1,4 @@
+
 .card-body{
     font-weight: 600;
     font-size: 17px; 
@@ -14,13 +15,20 @@
     text-decoration: underline;
   }   
   .analytics .notificationBtn{
-    background: #343A40;
+    background: rgb(11, 18, 26);
     color: #fff;
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+    z-index: 9999;
   }
-  .datepicker{
-      z-index: 9999;
-      border-radius:3px;
-      height: 40px; 
+
+  .analytics .datepicker{
+    z-index: 9999;
+    border-radius: 3px;
+    height: 35px;
+    float: right;
+    width: 290px;
   }
   .analytics .react-datepicker-popper{
       z-index: 999999 ;
@@ -31,4 +39,9 @@
     color: #343A40;
     margin-left: 20px;
     margin-top: 8px;
+  }
+  .analytics span{
+    color: #343a40;
+    font-size: 13px;
+    font-weight: bold;
   }

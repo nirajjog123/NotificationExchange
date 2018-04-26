@@ -20,23 +20,23 @@ class Analytics extends Component {
   showChartDetails() {
     this.setState({ hidebox: !this.state.hidebox });
   }
-  
+
   render() {
     let templatename = this.props.location.state ? this.props.location.state.templatename : "";
-   
+
     return (
       <div className="col-md-12 col-lg-12 analytics">
 
-        <div className="margin-t-75">
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                <button className="btn notificationBtn" onClick={this.showChartDetails}>More details about charts</button>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-               <h3>Template Name - {templatename}</h3>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div className="margin-t-65">
+          <div className="row">
+            <button className="btn notificationBtn" onClick={this.showChartDetails}>More details about charts</button>
+
+            <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+              <h3>Template Name - {templatename}</h3>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div>
+                <span>Select Date</span>
                 <DatePicker className="datepicker" selected={this.state.date} onChange={this.handleChange} />
               </div>
             </div>
