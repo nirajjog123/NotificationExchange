@@ -153,3 +153,10 @@ color: #fff;
   border-radius: 3px 3px 0px 0px;
   font-size: 15px;
 }
+.pagetitle{
+  width: 100%;
+  text-decoration: underline;
+  font-size: 22px;
+  margin-bottom: 20px;
+
+}

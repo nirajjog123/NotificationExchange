@@ -4,11 +4,20 @@
 .nav-link{
     color: #fff;
 }
+.Header img{
+width: 200px;
+height: 60px;
+}
 .Header .collapse ul li a{
     color: #fff;
     cursor: pointer;
 }
 .Header .collapse ul li a:hover{
+    background: #fff;
+    color: #343a40 !important;
+    font-weight: bold;
+}
+.Header .collapse ul li a:focus{
     background: #fff;
     color: #343a40 !important;
     font-weight: bold;
