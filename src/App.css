@@ -98,42 +98,43 @@ color: #fff;
 .widget-card{
   position: relative;
   margin-bottom: 20px;
-  padding: 15px 20px;
+  padding: 14px 10px 0px 10px;
   background: #fff;
   border-radius: .2rem;
   box-shadow: 0 0 10px #e8e8e8;
   overflow: hidden;
 }   
 .widget-card {
-  min-height:100px;
+  height:80px;
 }
 .widget-body{
   padding: 0px 5px;
 }
 .widget-body i{
-  font-size: 65px;
+  font-size: 35px;
 }
 .animation1{
-  transition-property: transform;
+ {/* transition-property: transform;
   transition-duration: 750ms;
   transition-timing-function: ease;
   transform: translate(0%, 0%) translateZ(0px);  
   overflow: hidden;
+  z-index: 999;*/}
   position: absolute;
-  z-index: 999;
   box-sizing: border-box; 
   margin: 0px;
  
 }
 
 .animation2{
-  transition-property: transform;
+ {/* transition-property: transform;
   transition-duration: 750ms;
   transition-timing-function: ease;
   transform: translate(0%, -150%) translateZ(0px);
   overflow: hidden;
-  position: absolute;
   z-index: 999;
+  overflow: hidden;*/} 
+  position: absolute; 
   box-sizing: border-box;   
   margin: 0px; 
 }
@@ -142,7 +143,7 @@ color: #fff;
 }
 .dashboard .fw-normal{
   color: #6d6d6d; 
-  font-size: 25px;
+  font-size: 18px;
 }
 /*GraphCombo*/
 .graphcombo .card-body{

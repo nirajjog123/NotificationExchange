@@ -54,31 +54,31 @@ class Dashboard extends Component {
       <div className="widget widget-card">
         <div className="widget-body">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
               <span class="widget-icon">
                 <i className="fa fa-bell text-primary"></i>                        
               </span>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
               <div className={this.state.animationClass1}>
-                <h6 className="no-margin defaultAlign">Push Notification</h6>
-                <p className="fw-normal defaultAlign">{this.state.pushNotificationCount}</p>
+                <h6 className="no-margin text-center">Push Notification</h6>
+                <p className="fw-normal">{this.state.pushNotificationCount}</p>
               </div>
-              <div className={this.state.animationClass2}>
+             {/*<div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">Push Notification</h6>
                 <p className="fw-normal defaultAlign">{this.state.pushNotificationCount}</p>
-              </div>  
+             </div> */} 
             </div>
 
              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <div className={this.state.animationClass1}>
-                <h6 className="no-margin defaultAlign">Quota</h6>
-                <p className="fw-normal defaultAlign">{this.state.pushNotificationQuota}</p>
+                <h6 className="no-margin text-center">Quota</h6>
+                <p className="fw-normal">{this.state.pushNotificationQuota}</p>
               </div>
-              <div className={this.state.animationClass2}>
+             {/* <div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">Quota</h6>
                 <p className="fw-normal defaultAlign">{this.state.pushNotificationQuotagit}</p>
-              </div>  
+            </div> */} 
             </div>
 
           </div>         
@@ -89,31 +89,31 @@ class Dashboard extends Component {
       <div className="widget widget-card">
         <div className="widget-body">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
             <span class="widget-icon">
                 <i className="fa fa-envelope-open text-success"></i>                        
               </span>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
               <div className={this.state.animationClass1}>
-                <h6 className="no-margin defaultAlign">Email</h6>
-                <p className="fw-normal defaultAlign">{this.state.emailNotificationCount}</p>
+                <h6 className="no-margin text-center">Email</h6>
+                <p className="fw-normal">{this.state.emailNotificationCount}</p>
               </div>
-              <div className={this.state.animationClass2}>
+              {/* <div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">Email</h6>
                 <p className="fw-normal defaultAlign">{this.state.emailNotificationCount}</p>
-              </div>  
+              </div> */}  
             </div>
 
              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <div className={this.state.animationClass1}>
-                <h6 className="no-margin defaultAlign">Quota</h6>
-                <p className="fw-normal defaultAlign">{this.state.emailNotificationQuota}</p>
+                <h6 className="no-margin text-center">Quota</h6>
+                <p className="fw-normal">{this.state.emailNotificationQuota}</p>
               </div>
-              <div className={this.state.animationClass2}>
+               {/*<div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">Quota</h6>
                 <p className="fw-normal defaultAlign">{this.state.emailNotificationQuota}</p>
-              </div>  
+                </div> */} 
             </div>
 
           </div>         
@@ -124,31 +124,31 @@ class Dashboard extends Component {
       <div className="widget widget-card">
         <div className="widget-body">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
             <span class="widget-icon">
                 <i className="fa fa-envelope text-orange"></i>                        
               </span>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
               <div className={this.state.animationClass1}>
+                <h6 className="no-margin text-center">SMS</h6>
+                <p className="fw-normal">{this.state.smsNotificationCount}</p>
+              </div>            
+              {/* <div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">SMS</h6>
                 <p className="fw-normal defaultAlign">{this.state.smsNotificationCount}</p>
-              </div>
-              <div className={this.state.animationClass2}>
-                <h6 className="no-margin defaultAlign">SMS</h6>
-                <p className="fw-normal defaultAlign">{this.state.smsNotificationCount}</p>
-              </div>  
+              </div> */}  
             </div>
 
              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <div className={this.state.animationClass1}>
-                <h6 className="no-margin defaultAlign">Quota</h6>
-                <p className="fw-normal defaultAlign">{this.state.smsNotificationQuota}</p>
+                <h6 className="no-margin text-center">Quota</h6>
+                <p className="fw-normal">{this.state.smsNotificationQuota}</p>
               </div>
-              <div className={this.state.animationClass2}>
+               {/* <div className={this.state.animationClass2}>
                 <h6 className="no-margin defaultAlign">Quota</h6>
                 <p className="fw-normal defaultAlign">{this.state.smsNotificationQuota}</p>
-              </div>  
+              </div>  */} 
             </div>
 
           </div>         
