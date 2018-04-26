@@ -6,3 +6,7 @@
     border-radius: 3px 3px 0px 0px;
     font-size: 15px;
   }
+
+  .widget-card {
+    height: 0px;
+  }
