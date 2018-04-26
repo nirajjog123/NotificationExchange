@@ -6,7 +6,7 @@
 }
 .Header img{
 width: 200px;
-height: 60px;
+height: auto;
 }
 .Header .collapse ul li a{
     color: #fff;
