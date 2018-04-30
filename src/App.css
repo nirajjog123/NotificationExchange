@@ -114,26 +114,13 @@ color: #fff;
   font-size: 35px;
 }
 .animation1{
- {/* transition-property: transform;
-  transition-duration: 750ms;
-  transition-timing-function: ease;
-  transform: translate(0%, 0%) translateZ(0px);  
-  overflow: hidden;
-  z-index: 999;*/}
   position: absolute;
   box-sizing: border-box; 
-  margin: 0px;
- 
+  margin: 0px; 
 }
 
 .animation2{
- {/* transition-property: transform;
-  transition-duration: 750ms;
-  transition-timing-function: ease;
-  transform: translate(0%, -150%) translateZ(0px);
-  overflow: hidden;
-  z-index: 999;
-  overflow: hidden;*/} 
+
   position: absolute; 
   box-sizing: border-box;   
   margin: 0px; 
@@ -153,4 +140,11 @@ color: #fff;
   padding: 10px 20px;
   border-radius: 3px 3px 0px 0px;
   font-size: 15px;
+}
+.pagetitle{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 22px;
+  color: #343A40;
+  padding: 10px 0;
 }

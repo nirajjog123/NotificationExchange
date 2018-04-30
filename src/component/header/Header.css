@@ -24,4 +24,7 @@
 .Header a{
     cursor: pointer;
 }
-
+.Header img{
+    width: 150px;
+    height: 40px;
+}

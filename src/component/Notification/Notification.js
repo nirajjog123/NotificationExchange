@@ -14,7 +14,7 @@ class Notification extends Component {
             create_Msg: false,
             data: [],
             edit: false,
-            selectedCandidate: {}          
+            selectedCandidate: {}
         };
         this.handleCreate = this.handleCreate.bind(this);
         this.editNotificationButton = this.editNotificationButton.bind(this);
@@ -31,22 +31,22 @@ class Notification extends Component {
     toggleOnOffButton(cell, row) {
         let rowIcons = row;
         return <div className="margin-l-45">
-            {rowIcons.smsTemplate &&<span className="lft">
+            {rowIcons.smsTemplate && <span className="lft">
                 <div><i class="fa fa-envelope-open text-success" aria-hidden="true"></i></div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
-           {rowIcons.deviceTemplate && <span className="lft">
+            {rowIcons.deviceTemplate && <span className="lft">
                 <div> <i class="fa fa-bell text-primary margin-lr-25" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
-            {rowIcons.emailTemplate &&<span className="lft">
+            {rowIcons.emailTemplate && <span className="lft">
                 <div> <i class="fa fa-envelope text-orange" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
         </div>
     }
 
-    readableData(cell,row){
+    readableData(cell, row) {
         let dateObj = new Date(row.creationDate);
         return dateObj.toDateString();
 
@@ -70,7 +70,7 @@ class Notification extends Component {
     }
 
     componentDidMount = () => {
-        var self = this;     
+        var self = this;
 
         let config = {
             headers: { 'authorization': localStorage.getItem('tokenId') }
@@ -89,20 +89,21 @@ class Notification extends Component {
 
         return (
             <div className="notify">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-70">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-65">                   
+                    <h6 className="pagetitle">Messages</h6>
                     <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#3a3a40', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }} 
-                    striped={true} hover={true} search searchPlaceholder="Search" version='4'
-                    pagination={true}>
-                    <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
-                    <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
-                    <TableHeaderColumn dataField='creationDate' dataAlign="center" dataFormat={this.readableData}>Last updated</TableHeaderColumn>
-                    <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>
-                    <TableHeaderColumn dataField='delete' dataAlign="center" disabled 
-                    dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
+                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#3a3a40', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }}
+                        striped={true} hover={true} search searchPlaceholder="Search" version='4'
+                        pagination={true}>
+                        <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
+                        <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
+                        <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
+                        <TableHeaderColumn dataField='creationDate' dataAlign="center" dataFormat={this.readableData}>Last updated</TableHeaderColumn>
+                        <TableHeaderColumn dataField='edit' dataAlign="center" dataFormat={this.editNotificationButton}>Edit</TableHeaderColumn>
+                        <TableHeaderColumn dataField='delete' dataAlign="center" disabled
+                            dataFormat={this.deleteNotificationButton}>Delete</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 {create_Msg && <Redirect to={{ pathname: '/message' }} />}
