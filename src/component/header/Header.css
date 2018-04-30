@@ -13,7 +13,11 @@
     color: #343a40 !important;
     font-weight: bold;
 }
-
+.highlight {
+    background: #fff;
+    color: #343a40 !important;
+    font-weight: bold;    
+}
 .Header .navbar-dark .navbar-nav .nav-link{
     color: #fff;
 }

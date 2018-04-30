@@ -23,8 +23,6 @@ class Notification extends Component {
         this.deleteData = this.deleteData.bind(this);
         this.toggleOnOffButton = this.toggleOnOffButton.bind(this);
         this.readableData = this.readableData.bind(this);
-
-
     }
     editNotificationButton(cell, row) {
         return <i class="fa fa-pencil text-primary fontsize25" aria-hidden="true" onClick={() => this.editData(row, 'Edittt')}></i>

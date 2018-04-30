@@ -35,13 +35,19 @@ class Header extends Component {
     this.setState({ logout: true });
     document.getElementById("Header").style.display = "none";
   }
-
+  navClass(navItem) {
+    let classNames = "nav-link ";
+    if(navItem) {
+      classNames += "highlight";
+    }
+    return classNames;
+  }
   render() {
     const { notification } = this.state;
     const { dashboard, analytics, logout } = this.state;
     return (
       <div className="Header" id="Header">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav className="navbar   navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <a className="navbar-brand" to="/notification" onClick={this.onMessageClick} id='dashboard'>Notification Exchange</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -49,15 +55,15 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" onClick={this.onMessageClick} id='dashboard'>
+                <a className={this.navClass(this.state.dashboard)} onClick={this.onMessageClick} id='dashboard'>
                   Dashboard </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={this.onMessageClick} id='message'>
+                <a className={this.navClass(this.state.notification)} onClick={this.onMessageClick} id='message'>
                   Messages </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={this.onMessageClick} id='analytics'>
+                <a className={this.navClass(this.state.analytics)} onClick={this.onMessageClick} id='analytics'>
                   Analytics <span></span></a>
               </li>
               <li className="nav-item">
