@@ -9,8 +9,8 @@
     cursor: pointer;
 }
 .Header .collapse ul li a:hover{
-    background: #fff;
-    color: #343a40 !important;
+    background: #436397;
+    color: #fff !important;
     font-weight: bold;
 }
 .highlight {
@@ -19,9 +19,15 @@
     font-weight: bold;    
 }
 .Header .navbar-dark .navbar-nav .nav-link{
-    color: #fff;
+    color: #436397;
+    font-weight: 300;
 }
 .Header a{
     cursor: pointer;
 }
+.navbar {
+        padding: 0rem 1rem!important;
+        background-color: #fff !important;
+        border-bottom:2px solid #436397;
+      }
 

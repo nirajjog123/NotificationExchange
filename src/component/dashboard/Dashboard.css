@@ -1,12 +1,242 @@
 .dashboard  .card-body{
-    background: #343A40;
-    color: #fff;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    border-radius: 3px 3px 0px 0px;
-    font-size: 15px;
-  }
+  background: #343A40;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 3px 3px 0px 0px;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
 
-  .widget-card {
-    height: 0px;
-  }
+.widget-card {
+  height: 0px;
+}
+
+.widget {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px 20px;
+  /* background: #fff; */
+  /* background: #cac7c7; */
+  border-radius: 0.2rem;
+  box-shadow: 0 0 40px #a3aac5;
+  font-family: "Montserrat", sans-serif;
+}
+
+.widget > header {
+  margin: -20px -20px;
+  padding: 20px 20px;
+}
+
+.widget-controls {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  padding: 14px;
+  font-size: 0.875rem;
+}
+
+.widget-controls > a {
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.15s ease-in-out;
+}
+
+.widget-controls > a > .glyphicon {
+  vertical-align: 0;
+  font-size: 12px;
+}
+
+.widget > header + .widget-body, .widget > header + .widget-body.p-0 {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.stats-row {
+  margin-bottom: 15px;
+}
+
+.stat-item {
+  display: inline-block;
+  padding-right: 15px;
+  
+}
+
+.stat-item + .stat-item {
+  padding-left: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+font-size: 14px;
+font-family: "Montserrat", sans-serif;
+}
+
+/* .progress {
+  box-shadow: none;
+  transition: width 0.6s ease;
+  height: 1.3rem;
+  border-radius: 0.25rem;
+} */
+
+.progress-xs {
+height: 5px !important;
+margin-bottom: 0.5rem;
+}
+
+.progress-bar1{
+width:60% !important;
+}
+.progress-bar2{
+width:40% !important;
+}
+.progress-bar3{
+width:80% !important;
+}
+
+
+.widget-icon{
+font-size: 25px;
+}
+
+.widget > header + .widget-body, .widget > header + .widget-body.p-0 {
+margin-top: 20px;
+}
+
+.widget-body.p-0 > .list-group {
+margin: 0;
+}
+
+.list-group {
+display: flex;
+flex-direction: column;
+padding-left: 0;
+margin-bottom: 0;
+}
+
+.widget-body.p-0 > .list-group .list-group-item {
+border-width: 1px 0;
+}
+
+.list-group-item:first-child {
+border-radius: 0;
+}
+
+.list-group-item {
+position: relative;
+display: block;
+padding: 0.75rem 1.25rem;
+margin-bottom: -1px;
+background-color: #fff;
+border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list-group-lg .list-group-item {
+padding: 15px 15px;
+}
+
+.thumb-xs, .thumb-sm, .thumb-lg, .thumb-xl, .thumb {
+position: relative;
+display: inline-block;
+text-align: center;
+}
+
+.thumb-sm {
+width: 34px;
+}
+
+.float-left {
+float: left !important;
+}
+
+.mr-3, .mx-3 {
+margin-right: 1rem !important;
+}
+
+.ml-3, .mx-3 {
+margin-left: 1rem !important;
+}
+
+.no-margin {
+margin: 0;
+font-weight: 400;
+font-size: 14px;
+font-family: "Montserrat", sans-serif;
+}
+
+.text-ellipsis {
+display: block;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.help-block {
+margin-top: 5px;
+font-size: 85%;
+color: #798892;
+display: block;
+text-align: left;
+}
+
+.thumb-xs img, .thumb-sm img, .thumb-lg img, .thumb-xl img, .thumb img {
+height: auto;
+max-width: 100%;
+vertical-align: middle;
+}
+
+.rounded-circle {
+border-radius: 50% !important;
+}
+
+.msg-btn {
+float: right;
+margin-right: 10px;
+font-size: 20px;
+}
+
+.headerText{
+font-weight: 400;
+font-size: 14px;
+}
+
+.widget-body > p {
+font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #495057;
+  text-align: left;
+}
+
+.messageBody {
+overflow-y: auto;
+max-height: 320px;
+}
+
+
+/* ScrollBar CSS */
+
+
+.scrollbar-deep-purple::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-deep-purple::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-deep-purple::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #512da8; }
+
+.bordered-deep-purple::-webkit-scrollbar-track {
+-webkit-box-shadow: none;
+border: 1px solid #512da8; }
+
+.bordered-deep-purple::-webkit-scrollbar-thumb {
+-webkit-box-shadow: none; }
+
+.thin::-webkit-scrollbar {
+width: 6px; }
