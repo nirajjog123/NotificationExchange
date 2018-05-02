@@ -48,7 +48,7 @@ body{
  .margin-lr-25{margin : 0 25px;}
  
  .chartc3{height: 350px;}
- .text-primary{color: #5d8fc2; }
+ .text-red{color: #f7115d; }
  .text-success{color: #b2deb1; }
  .text-orange{color: #dd5826; }
  .text-green{color: #28A745; }
@@ -196,7 +196,7 @@ body{
   color: #343a40;
 }
 .floatingmenu .button:hover{
-  background: #343a40;
+  background: #436397;
   color: #fff;
 }
 .floatingmenu .buttonicon{
@@ -208,3 +208,6 @@ body{
   font-weight: bold;
   text-align: left;
 }
+.notify .btn-secondary{
+  background:#436397;
+  }

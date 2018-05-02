@@ -45,7 +45,7 @@ class Notification extends Component {
             </span>}
         </div>
     }
-
+    
     readableData(cell,row){
         let dateObj = new Date(row.creationDate);
         return dateObj.toDateString();
@@ -89,7 +89,7 @@ class Notification extends Component {
 
         return (
             <div className="notify">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-90">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-70">
                     <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
