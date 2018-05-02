@@ -134,3 +134,54 @@ body{
   border-radius: 3px 3px 0px 0px;
   font-size: 15px;
  }
+ .pagetitle{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 22px;
+  color: #242A30;
+  padding: 10px 0;
+}
+.msgconfig .formalign{
+  margin: 0 auto;
+  width: 450px;
+  margin-top: 100px;
+}
+.msgconfig  .graybkg{
+  /* border: 1px solid gray;
+  border-radius:5px;  */
+}
+.msgconfig .floatingmenu{
+  float: left;
+  margin-left: -43px;
+  margin-top: 100px;
+}
+.msgconfig  .channelicon{
+  background: #eaeaea;
+    padding: 14px 0px 14px 15px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+.floatingmenu i{
+  font-size: 18px;
+  padding: 1px;
+  cursor: pointer;
+}
+.msgconfig .mobile{
+  font-size: 30px;
+}
+
+.floatingmenu ul li{
+  list-style-type: none;
+  padding: 16px 23px 47px 24px;
+  margin-bottom: 2px;
+  background: #eaeaea;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.floatingmenu ul li a{
+  cursor: pointer;
+  float: left;
+}
+.floatingmenu ul li:hover{
+  background:#343a40 !important;
+}
