@@ -25,14 +25,15 @@
   }
   .graphinfo{
     background-clip: border-box;
-    border:1px solid rgba(67, 99, 151, 0.325);
-    border-radius: 0.25rem;
-    background: #fff;
-    margin-bottom: 10px;
+    border-top: 1px solid rgba(67, 99, 151, 0.325);
+    /* border-radius: 0.25rem; */
+    /* background: #fff; */
+    /* margin-bottom: 10px; */
     padding: 3px 10px 0px 10px;
     text-align: center;
-    font-weight:600!important;
-    box-shadow: 0 0 10px #e8e8e8;
+    font-weight: 600!important;
+    /* -webkit-box-shadow: 0 0 10px #e8e8e8; */
+    /* box-shadow: 0 0 10px #e8e8e8; */
     }
     h5{
       font-weight: 600!important;

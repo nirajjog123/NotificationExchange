@@ -26,7 +26,7 @@ let smsChartsData = {
             ['EMAIL', 0, 0, 0, 0, 0, 0],
             ['PUSH',  0, 0, 0, 0, 0, 0]
         ],
-        "header" : "SMS bar chart data"
+        "header" : "SMS BAR CHART DATA"
     },
     "pieChart" :{
         "data" :[
@@ -34,7 +34,7 @@ let smsChartsData = {
             ["NO", 15],
             ["NO RESPONSE", 55],
         ],
-        "header": "SMS pie chart data"
+        "header": "SMS PIE CHART DATA"
     },
     "areaChart" :{
 
@@ -44,7 +44,7 @@ let smsChartsData = {
         ['Notification Sent', 150, 140, 130, 250, 180, 90, 60, 50, 0, 0, 0, 0],
          ['Respond to Notification', 0, 20, 40, 50, 60, 90,195, 30, 20, 10, 5, 5]
        ],
-      "header": "SMS area chart data" 
+      "header": "SMS AREA CHART DATA" 
     }   
 }
 
@@ -56,7 +56,7 @@ let emailChartsData =  {
             ['EMAIL', 130, 340, 200, 500, 250, 350],
             ['PUSH', 0, 0, 0, 0, 0, 0]
         ],
-        "header" : "email bar chart data"
+        "header" : "EMAIL BAR CHART DATA"
     },
     "pieChart" :{
         "data" :[
@@ -64,7 +64,7 @@ let emailChartsData =  {
             ["NO", 40],
             ["NO RESPONSE", 20],
         ],
-        "header": "email pie chart data"
+        "header": "EMAIL PIE CHART DATA"
     },
     "areaChart" :{
 
@@ -74,7 +74,7 @@ let emailChartsData =  {
         ['Notification Sent', 150, 140, 100, 200, 150, 90, 60, 50, 0, 0, 0, 0],
         ['Respond to Notification', 0, 50, 60, 70, 60, 100, 135, 30, 20, 10, 5, 5]
        ],
-      "header": "email area chart data" 
+      "header": "EMAIL AREA CHART DATA" 
     }   
 }
 
