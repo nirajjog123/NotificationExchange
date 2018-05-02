@@ -91,33 +91,32 @@ class Message extends Component {
       <div className="margin-t-55 msgconfig">
 
         <div className="row">
-          <div className="col-md-12 col-sm-12 col-md-2 col-lg-2">
-            {showMsgDom && <div className="graybkg" id='msgOption' >
-              <div>
-                <button onClick={this.handleCheck} name='sms' className="card-body btn-block msgbtn">SMS</button>
-              </div>
-              <div>
-                <button onClick={this.handleCheck} name='email' className="card-body btn-block msgbtn">EMAIL</button>
-              </div>
-              <div>
-                <button onClick={this.handleCheck} name='queue' className="card-body btn-block msgbtn">MOBILE PUSH</button>
-              </div>
-              <div>
-                <button onClick={this.handleCheck} name='web' className="card-body btn-block msgbtn">WEB PUSH</button>
-              </div>
+          <div className="col-md-12 col-sm-12 col-md-1 col-lg-1">
+            {showMsgDom && <div className="floatingmenu"  id='msgOption' >
+              <ul>
+                <li className=""><a ><i className="fa fa-bell text-primary" onClick={this.handleCheck} name='sms'></i></a></li>
+                <li className=""><a ><i className="fa fa-envelope-open text-success" onClick={this.handleCheck} name='email'></i></a></li>
+                <li className=""><a ><i className="fa fa-envelope text-orange" onClick={this.handleCheck} name='queue'></i></a></li>
+                <li className=""><a ><i className="fa fa-mobile mobile text-red" onClick={this.handleCheck} name='web'></i></a></li>
+              </ul>
             </div>}
           </div>
-          <div className="col-md-12 col-sm-12 col-md-4 col-lg-4"  >
-            <div className="msgconfigmain margin-t-30">
-              <label>Template Name</label>
-              {editTempRender}
+          <div className="col-md-12 col-sm-12 col-md-11 col-lg-11">
+            <div className="formalign">
+              <div className="msgconfigmain margin-t-30">
+
+                <label>Templateee Name</label>
+                {editTempRender}
+              </div>
+
+              {showMsgDom && <div className={(tempId ? 'show' : 'hidden')}  >
+                {sms && <Sms editData={this.props.location.state} templateId={tempId} />}
+                {email && <Email editData={this.props.location.state} templateId={tempId} />}
+                {queue && <Queue editData={this.props.location.state} templateId={tempId} />}
+                {web && <Web editData={this.props.location.state} templateId={tempId} />}
+              </div>}
             </div>
-            {showMsgDom && <div className={(tempId ? 'show' : 'hidden')}  >
-              {sms && <Sms editData={this.props.location.state} templateId={tempId} />}
-              {email && <Email editData={this.props.location.state} templateId={tempId} />}
-              {queue && <Queue editData={this.props.location.state} templateId={tempId} />}
-              {web && <Web editData={this.props.location.state} templateId={tempId} />}
-            </div>}
+
           </div>
         </div>
       </div>
