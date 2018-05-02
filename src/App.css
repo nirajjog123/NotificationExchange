@@ -123,8 +123,11 @@ body{
   font-size: 18px;
  }
  /*GraphCombo*/
+ .graphcombo .card{
+  border:1px solid rgba(67, 99, 151, 0.325);
+ }
  .graphcombo .card-body{
-  background: #343A40;
+  background: #436397;
   color: #fff;
   margin-bottom: 20px;
   padding: 10px 20px;

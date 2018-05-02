@@ -5,16 +5,18 @@
   #accordion{
   margin-bottom:30px;
   } 
-  
+  #accordion .card{
+    border:1px solid rgba(67, 99, 151, 0.325);
+ }
   #accordion .card-header{
-  background-color: #343a40;
+  background-color: #436397;
   } 
   #accordion .card a{
   color: #fff;
   text-decoration: underline;
   } 
   .analytics .notificationBtn{
-  background: rgb(11, 18, 26);
+  background:#436397;
   color: #fff;
   position: fixed;
   right: 30px;
@@ -39,7 +41,7 @@
     z-index: 950!important;
   } 
   .date-range-toggle{
-    background: #343A40!important;  
+    background: #436397!important;  
   }
   .date-template{
     margin-top: 100px!important;
