@@ -182,33 +182,33 @@ class Dashboard extends Component {
  <span className="thumb-sm float-left mx-3 widget-icon">
  <i class="fa fa-envelope text-orange"></i> 
  </span>
- <span className="no-margin">Chris Gray</span>
+ <span className="no-margin">Result Today</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
  <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
- <p className="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p> 
+ <p className="help-block text-ellipsis no-margin">Major stocks from Pharma are going to declare Today</p> 
  </a>
 
  <a className="list-group-item" href="#">
  <span className="thumb-sm float-left mx-3 widget-icon">
  <i class="fa fa-envelope-open text-success"></i> 
  </span>
- <span className="no-margin">Chris Gray</span>
+ <span className="no-margin">Stock Sell</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
  <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
- <p className="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p> 
+ <p className="help-block text-ellipsis no-margin">Thank you, we have received your purchase order</p> 
  </a>
 
  <a className="list-group-item" href="#">
  <span className="thumb-sm float-left mx-3 widget-icon">
  <i class="fa fa-envelope-open text-success"></i> 
  </span>
- <span className="no-margin">Chris Gray</span>
+ <span className="no-margin">Divident stocks</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
  <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
- <p className="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p> 
+ <p className="help-block text-ellipsis no-margin">Some of the automobile/ reality stocks may provide higher dividents this year</p> 
  </a>
  </div>
 
