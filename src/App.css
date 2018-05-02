@@ -33,6 +33,7 @@ body{
  
  .margin-r-20{margin-right:20px;}
  
+ .margin-t-10{margin-top:10px;}
  .margin-t-20{margin-top:20px;}
  .margin-t-30{margin-top:30px;}
  .margin-t-55{margin-top:55px;}
@@ -40,6 +41,7 @@ body{
  .margin-t-65{margin-top:65px;}
  .margin-t-70{margin-top:70px;}
  .margin-t-75{margin-top:75px;}
+ .margin-t-90{margin-top:90px;}
  .margin-t-95{margin-top:95px;}
  .margin-t-100{margin-top:100px;}
  
@@ -79,7 +81,7 @@ body{
  }
  .notify .notificationBtn,.email .savebtn,.email .cancelbtn,.sms .savebtn,.sms .cancelbtn,.msgConfig .okbtn,.queue .cancelbtn,.web .cancelbtn{
   width: 120px;
-  background: #343A40;
+  background:#436397;
   color: #fff;
  }
  .grid .notificationBtn{
@@ -152,8 +154,7 @@ body{
 }
 .msgconfig .floatingmenu{
   float: left;
-  margin-left: -43px;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 .msgconfig  .channelicon{
   background: #eaeaea;
@@ -184,4 +185,26 @@ body{
 }
 .floatingmenu ul li:hover{
   background:#343a40 !important;
+}
+.floatingmenu .button{
+  margin-bottom: 2px;
+  background: #eaeaea;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0;
+  height:73px;
+  color: #343a40;
+}
+.floatingmenu .button:hover{
+  background: #343a40;
+  color: #fff;
+}
+.floatingmenu .buttonicon{
+  float: left;
+  width: 40px;
+}
+.floatingmenu .buttonicontext{
+  width: 100px;
+  font-weight: bold;
+  text-align: left;
 }

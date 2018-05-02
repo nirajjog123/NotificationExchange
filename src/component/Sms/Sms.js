@@ -91,7 +91,7 @@ class Sms extends Component {
       );
 
     return (
-      <div className="margin-t-30 sms">
+      <div className="margin-t-10 sms">
         <form>
           <div className="form-group">
             <label >Message</label>

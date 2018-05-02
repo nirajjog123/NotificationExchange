@@ -123,7 +123,7 @@ class Email extends Component {
     );
 
     return (
-      <div className="margin-t-30 email">
+      <div className="margin-t-10 email">
         <form >
           <div className="form-group">
             <label >From</label>

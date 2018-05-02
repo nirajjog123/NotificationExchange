@@ -97,7 +97,7 @@ class Queue extends Component {
           onChange={this.handleChange}  >{templateDta}</textarea>
       );
     return (
-      <div className="margin-t-30 queue">
+      <div className="margin-t-10 queue">
         <form >
           <div className="form-group">
             <label >Message</label>
