@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect, } from 'react-router';
 import './Dashboard.css';
 import Quota from './Quota';
 //import 'open-iconic/font/css/open-iconic-foundation.css';
@@ -19,33 +20,43 @@ class Dashboard extends Component {
  smsNotificationQuota: 8654,
  animationClass1: 'animation1', 
  animationClass2: 'animation2',
+ msgName: ''
  }; 
 
- setInterval(() => {
- let pushNotCount = this.state.pushNotificationCount, pushNotQuota= this.state.pushNotificationQuota;
- let emailNotCount = this.state.emailNotificationCount, emailNotQuota= this.state.emailNotificationQuota;
- let smsNotCount = this.state.smsNotificationCount, smsNotQuota= this.state.smsNotificationQuota; 
- pushNotCount++; 
- emailNotCount++;
- smsNotCount++;
- pushNotQuota--; 
- emailNotQuota--;
- smsNotQuota--;
- let animationClass1 = this.state.animationClass1 == 'animation1' ? 'animation2' : 'animation1';
- let animationClass2 = this.state.animationClass2 == 'animation2' ? 'animation1' : 'animation2';
- this.setState({
- animationClass1,
- animationClass2,
- pushNotificationCount : pushNotCount,
- pushNotificationQuota : pushNotQuota,
- emailNotificationCount : emailNotCount,
- emailNotificationQuota : emailNotQuota,
- smsNotificationCount : smsNotCount,
- smsNotificationQuota : smsNotQuota 
- });
- }, 2000);
+//  setInterval(() => {
+//  let pushNotCount = this.state.pushNotificationCount, pushNotQuota= this.state.pushNotificationQuota;
+//  let emailNotCount = this.state.emailNotificationCount, emailNotQuota= this.state.emailNotificationQuota;
+//  let smsNotCount = this.state.smsNotificationCount, smsNotQuota= this.state.smsNotificationQuota; 
+//  pushNotCount++; 
+//  emailNotCount++;
+//  smsNotCount++;
+//  pushNotQuota--; 
+//  emailNotQuota--;
+//  smsNotQuota--;
+//  let animationClass1 = this.state.animationClass1 == 'animation1' ? 'animation2' : 'animation1';
+//  let animationClass2 = this.state.animationClass2 == 'animation2' ? 'animation1' : 'animation2';
+//  this.setState({
+//  animationClass1,
+//  animationClass2,
+//  pushNotificationCount : pushNotCount,
+//  pushNotificationQuota : pushNotQuota,
+//  emailNotificationCount : emailNotCount,
+//  emailNotificationQuota : emailNotQuota,
+//  smsNotificationCount : smsNotCount,
+//  smsNotificationQuota : smsNotQuota 
+//  });
+//  }, 2000);
+this.sendAnalyticData = this.sendAnalyticData.bind(this);
  } 
+
+ sendAnalyticData(event){
+console.log(event);
+
+let getMsgName = event.currentTarget.attributes.name ? event.currentTarget.attributes.name.value  : '';
+this.setState({msgName:getMsgName})
+ }
  render() {
+   const {msgName} = this.state;
  return (
 <div className="col-md-12 col-lg-12 dashboard">
  <div className="row margin-t-75">
@@ -162,7 +173,7 @@ class Dashboard extends Component {
  </span>
  <span className="no-margin">Stock Buy</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
- <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
+ <span className="no-margin" onClick ={this.sendAnalyticData} name="Stock Buy" ><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
  <p className="help-block text-ellipsis no-margin">Thank you, we have received your purchase order</p> 
  </a>
@@ -173,7 +184,7 @@ class Dashboard extends Component {
  </span>
  <span className="no-margin">Promotional Activity</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
- <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
+ <span className="no-margin" onClick ={this.sendAnalyticData} name="Promotional Activity"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
  <p className="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p> 
  </a>
@@ -184,7 +195,7 @@ class Dashboard extends Component {
  </span>
  <span className="no-margin">Result Today</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
- <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
+ <span className="no-margin" onClick ={this.sendAnalyticData} name="Result Today"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
  <p className="help-block text-ellipsis no-margin">Major stocks from Pharma are going to declare Today</p> 
  </a>
@@ -195,7 +206,7 @@ class Dashboard extends Component {
  </span>
  <span className="no-margin">Stock Sell</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
- <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
+ <span className="no-margin" onClick ={this.sendAnalyticData} name="Stock Sell"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
  <p className="help-block text-ellipsis no-margin">Thank you, we have received your purchase order</p> 
  </a>
@@ -206,7 +217,7 @@ class Dashboard extends Component {
  </span>
  <span className="no-margin">Divident stocks</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
- <span className="no-margin"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
+ <span className="no-margin" onClick ={this.sendAnalyticData} name="Divident stocks"><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
  <p className="help-block text-ellipsis no-margin">Some of the automobile/ reality stocks may provide higher dividents this year</p> 
  </a>
@@ -227,53 +238,12 @@ class Dashboard extends Component {
  </div>
  </section>
  </div>
- </div>
 
-
- {/* <div className="row">
- <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <section className="widget">
- <header>
- <h6 class="headerText">SENT TODAY</h6>
- <div className="widget-controls">
- <a href="#"><i className="fa fa-cog"></i></a>
+ {msgName && <Redirect to={{
+                    pathname: '/analytics',
+                    state: msgName
+                }} />}
  </div>
- </header>
- <div className="widget-body p-0">
- <Graph />
- </div>
- </section>
- </div>
- </div> */}
-
- {/* <div className="row">
- <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div className="card">
- <div className="card-body">
- <div className="mr-5">Sent Today</div>
- </div>
- <Graph />
- </div>
- </div>
- <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
- <div className="card">
- <div className="card-body">
- <div className="mr-5">Analysis</div>
- </div>
- <Graph2 />
- </div>
- </div>
- </div> */}
- {/* <div className="row margin-t-30">
-<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
- <div className="card">
- <div className="card-body">
- <div>Todays Top 5 Notifications</div>
- </div>
- <Grid />
- </div>
- </div>
- </div>  */}
 </div> 
 );
  }

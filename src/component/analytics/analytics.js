@@ -44,7 +44,7 @@ class Analytics extends Component {
   }
 
   render() {
-    let templatename = this.props.location.state ? this.props.location.state.templatename : "Stock Market Promotion Activity";
+    const templatename = this.props.location.state ? this.props.location.state : "Stock Market Promotion Activity";
     let start = this.state.startDate.format('DD-MM-YYYY');
     let end = this.state.endDate.format('DD-MM-YYYY');
     let label = start + '  -  ' + end;
@@ -60,10 +60,10 @@ class Analytics extends Component {
           <div className="row date-template">
             {/* <button className="btn notificationBtn"  onClick={this.showChartDetails}>More details about charts</button> */}
 
-            <a className="btn notificationBtn page-scroll page-scroll" href="#accordion" onClick={this.showChartDetails}>More details about charts</a>
             <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
               <h3>Template - {templatename}</h3>
             </div>
+            <a className="btn notificationBtn page-scroll page-scroll" href="#accordion" onClick={this.showChartDetails}>More details about charts</a>
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div>
                 {/* <span>Select Date</span> */}
