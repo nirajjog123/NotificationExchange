@@ -213,3 +213,7 @@ body{
 .notify .btn-secondary{
   background:#436397;
   }
+  .msgconfig .msgTabHighlight {
+    background: #436397;
+    color: #fff;
+}
