@@ -41,7 +41,8 @@ class Message extends Component {
     let tName = this.state.template;
     let respData = '';
 
-    event.target.disabled = true
+    // event.target.disabled = true;
+    event.target.style.display = "none";
     this.setState({ showMsgDom: true });
 
     let config = {
@@ -92,20 +93,23 @@ class Message extends Component {
 
         <div className="row">
           <div className="col-md-12 col-sm-12 col-md-1 col-lg-1">
-            {showMsgDom && <div className="floatingmenu"  id='msgOption' >
-              <ul>
-                <li className=""><a ><i className="fa fa-bell text-primary" onClick={this.handleCheck} name='sms'></i></a></li>
-                <li className=""><a ><i className="fa fa-envelope-open text-success" onClick={this.handleCheck} name='email'></i></a></li>
-                <li className=""><a ><i className="fa fa-envelope text-orange" onClick={this.handleCheck} name='queue'></i></a></li>
-                <li className=""><a ><i className="fa fa-mobile mobile text-red" onClick={this.handleCheck} name='web'></i></a></li>
-              </ul>
+            {showMsgDom && <div className="floatingmenu" id='msgOption' >
+              <button type="button" className="button" onClick={this.handleCheck} name='sms'><div className="buttonicon"><i className="fa fa-bell text-primary"></i></div><div className="buttonicontext">SMS</div></button>
+              <button type="button" className="button" onClick={this.handleCheck} name='email'><div className="buttonicon"><i className="fa fa-envelope-open text-success"></i></div><div className="buttonicontext">EMAIL</div></button>
+              <button type="button" className="button" onClick={this.handleCheck} name='queue'><div className="buttonicon"><i className="fa fa-envelope text-orange"></i></div><div className="buttonicontext">QUEUE</div></button>
+              <button type="button" className="button" onClick={this.handleCheck} name='web'><div className="buttonicon"><i className="fa fa-mobile mobile text-primary"></i></div><div className="buttonicontext">PUSH</div></button>
+              {/* <ul>              
+                <li className=""><a><i className="fa fa-bell text-primary" onClick={this.handleCheck} name='sms'></i></a></li>
+                <li className=""><a><i className="fa fa-envelope-open text-success" onClick={this.handleCheck} name='email'></i></a></li>
+                <li className=""><a><i className="fa fa-envelope text-orange" onClick={this.handleCheck} name='queue'></i></a></li>
+                <li className=""><a><i className="fa fa-mobile mobile text-red" onClick={this.handleCheck} name='web'></i></a></li>
+              </ul> */}
             </div>}
           </div>
           <div className="col-md-12 col-sm-12 col-md-11 col-lg-11">
             <div className="formalign">
-              <div className="msgconfigmain margin-t-30">
-
-                <label>Templateee Name</label>
+              <div className="msgconfigmain margin-t-10">
+                <label>Template Name</label>
                 {editTempRender}
               </div>
 

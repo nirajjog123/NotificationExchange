@@ -97,11 +97,11 @@ class Queue extends Component {
       onChange={this.handleChange}  >{templateDta}</textarea>
     );
     return (
-      <div className="margin-t-30 web">
+      <div className="margin-t-10 web">
         <form >
          
           <div className="form-group">
-            <label >Messageeee</label>
+            <label >Message</label>
             {editMessage}
           </div>
           <button  className="btn  cancelbtn margin-r-20 savebtn" onClick={this.handleSubmit}>Save</button>

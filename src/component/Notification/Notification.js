@@ -89,11 +89,11 @@ class Notification extends Component {
 
         return (
             <div className="notify">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-70">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-90">
                     <button className="btn notificationBtn" onClick={this.handleCreate}>Create +</button>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#3a3a40', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }} 
+                    <BootstrapTable data={this.state.data} headerStyle={{ background: '#436397', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }} 
                     striped={true} hover={true} search searchPlaceholder="Search" version='4'
                     pagination={true}>
                     <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
