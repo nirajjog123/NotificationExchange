@@ -17,7 +17,7 @@ class Graphcombo2 extends Component {
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">{this.props.chartStaticData.areaChart.header}</div>
+                <h6 class="mr-5">{this.props.chartStaticData.areaChart.header}</h6>
               </div>
               <div>
                 <AreaChart areaChart={this.props.chartStaticData.areaChart.data} />
@@ -27,7 +27,7 @@ class Graphcombo2 extends Component {
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">{this.props.chartStaticData.pieChart.header}</div>
+                <h6 class="mr-5">{this.props.chartStaticData.pieChart.header}</h6>
               </div>
               <PieChart pieChart={this.props.chartStaticData.pieChart.data} />
             </div>
@@ -35,7 +35,7 @@ class Graphcombo2 extends Component {
           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">{this.props.chartStaticData.barChart.header}</div>
+                <h6 class="mr-5">{this.props.chartStaticData.barChart.header}</h6>
               </div>
               <BarChart barChart={this.props.chartStaticData.barChart.data} />
             </div>

@@ -126,11 +126,13 @@ body{
  }
  /*GraphCombo*/
  .graphcombo .card{
-  border:1px solid rgba(67, 99, 151, 0.325);
+  border-radius: 0.2rem;
+  box-shadow: 0 0 40px #a3aac5;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
  }
  .graphcombo .card-body{
-  background: #436397;
-  color: #fff;
+  color: #000000;
   margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 3px 3px 0px 0px;

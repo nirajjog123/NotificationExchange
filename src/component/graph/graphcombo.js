@@ -19,37 +19,31 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Response timings</div>
+                <h6 class="mr-5">NOTIFICATION RESPONSE TIMINGS</h6>
               </div>
               <div>
                 <AreaChart areaChart={chartStaticData.chartData.areaChart} />
+                <Graphinfo boxText = {chartStaticData.chartTextBox.areaSummaryInfo}/>
               </div>
-            </div>
-            <div className="margin-t-20 clr">
-              <Graphinfo boxText = {chartStaticData.chartTextBox.areaSummaryInfo}/>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Responses  </div>
+                <h6 class="mr-5">NOTIFICATION RESPONSES</h6>
               </div>
               <PieChart pieChart={chartStaticData.chartData.pieChart} />
-            </div>
-            <div className="margin-t-20 clr">
               <Graphinfo boxText = {chartStaticData.chartTextBox.pieSummaryInfo}/>
-            </div>            
+            </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Responses over different Channels</div>
+                <h6 class="mr-5">NOTIFICATION RESPONSES OVER DIFFERENT CHANNELS</h6>
               </div>
               <BarChart barChart={chartStaticData.chartData.barChart} />
-            </div>
-            <div className="margin-t-20 clr">
               <Graphinfo boxText = {chartStaticData.chartTextBox.barSummaryInfo}/>
-            </div>            
+            </div>
           </div>
         </div>
       </div>
