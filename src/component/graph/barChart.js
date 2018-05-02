@@ -6,19 +6,19 @@ class BarChart extends Component {
   constructor(props) {
     super(props);    
     this.data = {
-      x:'x', 
+      x:'x',
+      xFormat: '%Y-%m-%d %H:%M:%S', 
      columns: this.props.barChart,
      type : 'bar',
      groups: [
        ['SMS', 'EMAIL','PUSH']
    ]
    };
-   console.log('this.props.barChart',this.props.barChart);
    this.axisData ={
        x: {
            type: 'timeseries',
            tick: {
-           format: '%m-%d'
+           format: '%H:%M:%S'
            }
        }    
    }

@@ -10,6 +10,7 @@ class AreaChart extends Component {
     };
     this.data = {
       x: 'x',
+      xFormat: '%Y-%m-%d %H:%M:%S',
       columns: this.props.areaChart,
       type: 'area',
       groups: [
@@ -20,7 +21,6 @@ class AreaChart extends Component {
     this.axisData = {
       x: {
         type: 'timeseries',
-        localtime: false,
         tick: {
           format: '%H:%M:%S'
         }

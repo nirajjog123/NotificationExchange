@@ -1,47 +1,69 @@
-
 .card-body{
-    font-weight: 600;
-    font-size: 17px; 
+  font-weight: 600;
+  font-size: 17px; 
   }
   #accordion{
-    margin-bottom:30px;
+  margin-bottom:30px;
   } 
-
+  
   #accordion .card-header{
-    background-color: #343a40;
+  background-color: #343a40;
   } 
   #accordion .card a{
-    color: #fff;
-    text-decoration: underline;
-  }   
+  color: #fff;
+  text-decoration: underline;
+  } 
   .analytics .notificationBtn{
-    background: rgb(11, 18, 26);
-    color: #fff;
-    position: fixed;
-    right: 30px;
-    bottom: 25px;
-    z-index: 9999;
+  background: rgb(11, 18, 26);
+  color: #fff;
+  position: fixed;
+  right: 30px;
+  bottom: 25px;
+  z-index: 9999;
   }
-
+  
   .analytics .datepicker{
-    z-index: 9999;
-    border-radius: 3px;
-    height: 35px;
-    float: right;
-    width: 290px;
+  z-index: 999;
+  border-radius: 3px;
+  height: 35px;
+  float: left;
+  width: 289px;
+  position: relative;
   }
   .analytics .react-datepicker-popper{
-      z-index: 999999 ;
+  z-index: 999999 ;
+  }
+  .daterangepicker{
+    left:770px!important;
+    top:150px!important;
+    z-index: 950!important;
+  } 
+  .date-range-toggle{
+    background: #343A40!important;  
+  }
+  .date-template{
+    margin-top: 100px!important;
   }
   .analytics h3{
-    text-align: left;
-    font-size: 16px;   
-    color: #343A40;
-    margin-left: 20px;
-    margin-top: 8px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold; 
+  color: #343A40;
+  margin-left: 7px;
+  margin-top: 8px;
   }
   .analytics span{
-    color: #343a40;
-    font-size: 13px;
-    font-weight: bold;
+  color: #343a40;
+  font-size: 13px;
+  font-weight: bold;
+  } 
+  .calandericon{
+  position: absolute;
+  top: 27px;
+  right: 37px;
+  z-index: 99999999;
+  }
+  .calandericon img {
+  height: auto;
+  width: 25px;
   }

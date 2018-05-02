@@ -43,7 +43,7 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
-                <div class="mr-5">Notification Sent over different Channels</div>
+                <div class="mr-5">Notification Responses over different Channels</div>
               </div>
               <BarChart barChart={chartStaticData.chartData.barChart} />
             </div>
