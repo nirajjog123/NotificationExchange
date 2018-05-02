@@ -9,7 +9,7 @@ class Graphinfo extends Component {
     return (
       <div className="graphinfo">
           <div>
-            <h6>{this.props.boxText} </h6>
+            <h5>{this.props.boxText} </h5>
           </div>
       </div>
     );
