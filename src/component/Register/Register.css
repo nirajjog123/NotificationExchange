@@ -5,3 +5,13 @@
   .card-register {
     max-width: 40rem;
   }
+  .register .card-header{
+    background: #436397;
+    color: #fff;
+  }
+  .register .btn-primary{
+    background: #436397;
+  }
+  .register .btn-primary:hover{
+    background: #436397;
+  }
