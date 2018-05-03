@@ -19,7 +19,7 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h6 class="mr-5">NOTIFICATION RESPONSE TIMINGS</h6>
+                <h6 class="mr-5">NOTIFICATION INSIGHTS</h6>
               </div>
               <div>
                 <AreaChart areaChart={chartStaticData.chartData.areaChart} />
@@ -30,7 +30,7 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h6 class="mr-5">NOTIFICATION RESPONSES</h6>
+                <h6 class="mr-5">RESPONSE DISTRIBUTION</h6>
               </div>
               <PieChart pieChart={chartStaticData.chartData.pieChart} />
               <Graphinfo boxText = {chartStaticData.chartTextBox.pieSummaryInfo}/>
@@ -39,7 +39,7 @@ class Graphcombo extends Component {
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h6 class="mr-5">NOTIFICATION RESPONSES OVER DIFFERENT CHANNELS</h6>
+                <h6 class="mr-5">CHANNEL DISTRIBUTION</h6>
               </div>
               <BarChart barChart={chartStaticData.chartData.barChart} />
               <Graphinfo boxText = {chartStaticData.chartTextBox.barSummaryInfo}/>

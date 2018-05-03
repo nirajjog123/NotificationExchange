@@ -26,7 +26,7 @@ let smsChartsData = {
             ['EMAIL', 0, 0, 0, 0, 0, 0],
             ['PUSH',  0, 0, 0, 0, 0, 0]
         ],
-        "header" : "SMS BAR CHART DATA"
+        "header" : "SMS SENDING RATE "
     },
     "pieChart" :{
         "data" :[
@@ -34,7 +34,7 @@ let smsChartsData = {
             ["NO", 15],
             ["NO RESPONSE", 55],
         ],
-        "header": "SMS PIE CHART DATA"
+        "header": "SMS RESPONSES"
     },
     "areaChart" :{
 
@@ -44,7 +44,7 @@ let smsChartsData = {
         ['Notification Sent', 150, 140, 130, 250, 180, 90, 60, 50, 0, 0, 0, 0],
          ['Respond to Notification', 0, 20, 40, 50, 60, 90,195, 30, 20, 10, 5, 5]
        ],
-      "header": "SMS AREA CHART DATA" 
+      "header": "SMS DISTRIBUTION" 
     }   
 }
 
@@ -56,7 +56,7 @@ let emailChartsData =  {
             ['EMAIL', 130, 340, 200, 500, 250, 350],
             ['PUSH', 0, 0, 0, 0, 0, 0]
         ],
-        "header" : "EMAIL BAR CHART DATA"
+        "header" : "EMAIL SENDING RATE"
     },
     "pieChart" :{
         "data" :[
@@ -64,7 +64,7 @@ let emailChartsData =  {
             ["NO", 40],
             ["NO RESPONSE", 20],
         ],
-        "header": "EMAIL PIE CHART DATA"
+        "header": "EMAIL RESPONSES"
     },
     "areaChart" :{
 
@@ -86,7 +86,7 @@ let pushChartsData =  {
             ['EMAIL', 0, 0, 0, 0, 0, 0],
             ['PUSH', 400, 500, 450, 700, 600, 500]
         ],
-        "header" : "push bar chart data"
+        "header" : "PUSH SENDING RATE"
     },
     "pieChart" :{
         "data" :[
@@ -94,7 +94,7 @@ let pushChartsData =  {
             ["NO", 20],
             ["NO RESPONSE", 20],
         ],
-        "header": "push pie chart data"
+        "header": "PUSH RESPONSES"
     },
     "areaChart" :{
 
@@ -104,12 +104,12 @@ let pushChartsData =  {
         ['Notification Sent', 50, 140, 100, 100, 150, 90, 60, 50, 0, 0, 0, 0],
         ['Respond to Notification', 0, 20, 40, 50, 60, 90, 35, 30, 20, 10, 5, 5]
        ],
-      "header": "push area chart data" 
+      "header": "PUSH DISTRIBUTION" 
     }   
 }
 let chartTextBox = {
-    "areaSummaryInfo" : "Notification response pick time is 2PM to 3PM",
-    "pieSummaryInfo" : "Percentage of Not responding is less",
-    "barSummaryInfo" : "Email Notification response is more than other channel",
+    "areaSummaryInfo" : "Notification response pick time is 8PM to 9PM",
+    "pieSummaryInfo" : "% of No response is < average",
+    "barSummaryInfo" : "",
 }
 export default {chartData, smsChartsData, emailChartsData, pushChartsData, chartTextBox};
