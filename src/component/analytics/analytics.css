@@ -69,3 +69,12 @@
   height: auto;
   width: 25px;
   }
+  .lft{
+    float: left;
+  }
+.daterange{
+  font-weight: bold;
+  float: left;
+  margin-right: 7px;
+  margin-top: 5px;
+}

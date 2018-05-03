@@ -60,13 +60,15 @@ class Analytics extends Component {
           <div className="row date-template">
             {/* <button className="btn notificationBtn"  onClick={this.showChartDetails}>More details about charts</button> */}
 
-            <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
               <h3>Template - {templatename}</h3>
             </div>
             <a className="btn notificationBtn page-scroll page-scroll" href="#accordion" onClick={this.showChartDetails}>More details about charts</a>
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <div>
                 {/* <span>Select Date</span> */}
+                <p className="daterange">Date</p> 
+                <div className="lft">
                 <DatetimeRangePicker
                   startDate={this.state.startDate}
                   endDate={this.state.endDate}
@@ -82,6 +84,7 @@ class Analytics extends Component {
                     </span>
                   </div>
                 </DatetimeRangePicker>
+                </div>
               </div>
             </div>
           </div>
