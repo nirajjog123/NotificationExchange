@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { router,Redirect,Route } from 'react-router'
 import axios from 'axios';
+import './Register.css'
 
 
 class Register extends Component {
@@ -58,7 +59,7 @@ class Register extends Component {
     render() {
         const { register_user , login } = this.state
     return (
-        <div class="container">
+        <div class="register">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
