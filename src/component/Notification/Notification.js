@@ -30,24 +30,14 @@ class Notification extends Component {
     }
     toggleOnOffButton(cell, row) {
         let rowIcons = row;
-        return <div>
-            {rowIcons.smsTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <div><i class="fa fa-envelope-open text-success margin-lr-8" aria-hidden="true"></i></div>
-                <div>
-                    <div class="switch">
-                        <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
-                        <label for="cmn-toggle-4"></label>
-                    </div>
-                </div>
+        return <div className="margin-l-45">
+            {rowIcons.smsTemplate &&<span className="lft">
+                <div><i class="fa fa-commenting text-success" aria-hidden="true"></i></div>
+                <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
-            {rowIcons.deviceTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <div><i class="fa fa-bell text-primary margin-lr-8" aria-hidden="true"></i> </div>
-                <div>
-                    <div class="switch">
-                        <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
-                        <label for="cmn-toggle-2"></label>
-                    </div>
-                </div>
+           {rowIcons.deviceTemplate && <span className="lft">
+                <div> <i class="fa fa-desktop text-primary margin-lr-25" aria-hidden="true"></i> </div>
+                <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
             {rowIcons.emailTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <div> <i class="fa fa-envelope text-orange margin-lr-8" aria-hidden="true"></i> </div>
