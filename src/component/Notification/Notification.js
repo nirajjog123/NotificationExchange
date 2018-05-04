@@ -30,9 +30,9 @@ class Notification extends Component {
     }
     toggleOnOffButton(cell, row) {
         let rowIcons = row;
-        return <div className="margin-l-45">
-            {rowIcons.smsTemplate && <span className="lft">
-                <div><i class="fa fa-envelope-open text-success" aria-hidden="true"></i></div>
+        return <div>
+            {rowIcons.smsTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div><i class="fa fa-envelope-open text-success margin-lr-8" aria-hidden="true"></i></div>
                 <div>
                     <div class="switch">
                         <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
@@ -40,8 +40,8 @@ class Notification extends Component {
                     </div>
                 </div>
             </span>}
-            {rowIcons.deviceTemplate && <span className="lft">
-                <div><i class="fa fa-bell text-primary margin-lr-25" aria-hidden="true"></i> </div>
+            {rowIcons.deviceTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div><i class="fa fa-bell text-primary margin-lr-8" aria-hidden="true"></i> </div>
                 <div>
                     <div class="switch">
                         <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
@@ -49,8 +49,8 @@ class Notification extends Component {
                     </div>
                 </div>
             </span>}
-            {rowIcons.emailTemplate && <span className="lft">
-                <div> <i class="fa fa-envelope text-orange" aria-hidden="true"></i> </div>
+            {rowIcons.emailTemplate && <span className="lft col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div> <i class="fa fa-envelope text-orange margin-lr-8" aria-hidden="true"></i> </div>
                 <div>
                     <div class="switch">
                         <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" />
@@ -111,7 +111,7 @@ class Notification extends Component {
                     <BootstrapTable data={this.state.data} headerStyle={{ background: '#436397', color: 'white' }} options={{ noDataText: 'This is custom text for empty data' }}
                         striped={true} hover={true} search searchPlaceholder="Search" version='4'
                         pagination={true}>
-                        <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Product ID</TableHeaderColumn>
+                        <TableHeaderColumn dataField='_id' dataAlign="center" isKey>Template ID</TableHeaderColumn>
                         <TableHeaderColumn dataField='templateName' dataAlign="center">Template Name</TableHeaderColumn>
                         <TableHeaderColumn dataAlign="center" dataFormat={this.toggleOnOffButton}>Channel</TableHeaderColumn>
                         <TableHeaderColumn dataField='creationDate' dataAlign="center" dataFormat={this.readableData}>Last updated</TableHeaderColumn>
