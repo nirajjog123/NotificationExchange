@@ -32,11 +32,11 @@ class Notification extends Component {
         let rowIcons = row;
         return <div className="margin-l-45">
             {rowIcons.smsTemplate &&<span className="lft">
-                <div><i class="fa fa-envelope-open text-success" aria-hidden="true"></i></div>
+                <div><i class="fa fa-commenting text-success" aria-hidden="true"></i></div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
            {rowIcons.deviceTemplate && <span className="lft">
-                <div> <i class="fa fa-bell text-primary margin-lr-25" aria-hidden="true"></i> </div>
+                <div> <i class="fa fa-desktop text-primary margin-lr-25" aria-hidden="true"></i> </div>
                 <div> <i class="fa fa-toggle-on text-primary" aria-hidden="true"></i></div>
             </span>}
             {rowIcons.emailTemplate &&<span className="lft">

@@ -34,7 +34,7 @@ let smsChartsData = {
             ["NO", 15],
             ["NO RESPONSE", 55],
         ],
-        "header": "SMS RESPONSES"
+        "header": "SMS DISTRIBUTION"
     },
     "areaChart" :{
 
@@ -44,7 +44,7 @@ let smsChartsData = {
         ['Notification Sent', 150, 140, 130, 250, 180, 90, 60, 50, 0, 0, 0, 0],
          ['Respond to Notification', 0, 20, 40, 50, 60, 90,195, 30, 20, 10, 5, 5]
        ],
-      "header": "SMS DISTRIBUTION" 
+      "header": "SMS RESPONSES" 
     }   
 }
 
@@ -64,7 +64,7 @@ let emailChartsData =  {
             ["NO", 40],
             ["NO RESPONSE", 20],
         ],
-        "header": "EMAIL RESPONSES"
+        "header": "EMAIL DISTRIBUTION"
     },
     "areaChart" :{
 
@@ -74,7 +74,7 @@ let emailChartsData =  {
         ['Notification Sent', 150, 140, 100, 200, 150, 90, 60, 50, 0, 0, 0, 0],
         ['Respond to Notification', 0, 50, 60, 70, 60, 100, 135, 30, 20, 10, 5, 5]
        ],
-      "header": "EMAIL AREA CHART DATA" 
+      "header": "EMAIL RESPONSES" 
     }   
 }
 
@@ -94,7 +94,7 @@ let pushChartsData =  {
             ["NO", 20],
             ["NO RESPONSE", 20],
         ],
-        "header": "PUSH RESPONSES"
+        "header": "PUSH DISTRIBUTION"
     },
     "areaChart" :{
 
@@ -104,7 +104,7 @@ let pushChartsData =  {
         ['Notification Sent', 50, 140, 100, 100, 150, 90, 60, 50, 0, 0, 0, 0],
         ['Respond to Notification', 0, 20, 40, 50, 60, 90, 35, 30, 20, 10, 5, 5]
        ],
-      "header": "PUSH DISTRIBUTION" 
+      "header": "PUSH RESPONSES" 
     }   
 }
 let chartTextBox = {

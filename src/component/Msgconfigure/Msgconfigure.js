@@ -101,10 +101,10 @@ class Message extends Component {
         <div className="row">
           <div className="col-md-12 col-sm-12 col-md-1 col-lg-1">
             {showMsgDom && <div className="floatingmenu" id='msgOption' >
-              <button type="button" className={this.navClass(this.state.sms)} onClick={this.handleCheck} name='sms'><div className="buttonicon"><i className="fa fa-bell text-red"></i></div><div className="buttonicontext">SMS</div></button>
-              <button type="button" className={this.navClass(this.state.email)} onClick={this.handleCheck} name='email'><div className="buttonicon"><i className="fa fa-envelope-open text-success"></i></div><div className="buttonicontext">EMAIL</div></button>
+              <button type="button" className={this.navClass(this.state.sms)} onClick={this.handleCheck} name='sms'><div className="buttonicon"><i className="fa fa-commenting text-success"></i></div><div className="buttonicontext">SMS</div></button>
+              <button type="button" className={this.navClass(this.state.email)} onClick={this.handleCheck} name='email'><div className="buttonicon"><i className="fa fa-envelope text-orange"></i></div><div className="buttonicontext">EMAIL</div></button>
               <button type="button" className={this.navClass(this.state.push)} onClick={this.handleCheck} name='web'><div className="buttonicon"><i className="fa fa-mobile mobile text-red"></i></div><div className="buttonicontext">Mobile PUSH</div></button>
-              <button type="button" className={this.navClass(this.state.queue)} onClick={this.handleCheck} name='queue'><div className="buttonicon"><i className="fa fa-envelope text-orange"></i></div><div className="buttonicontext">Web Push</div></button>
+              <button type="button" className={this.navClass(this.state.queue)} onClick={this.handleCheck} name='queue'><div className="buttonicon"><i className="fa fa-desktop text-primary"></i></div><div className="buttonicontext">Web Push</div></button>
               {/* <ul>              
                 <li className=""><a><i className="fa fa-bell text-primary" onClick={this.handleCheck} name='sms'></i></a></li>
                 <li className=""><a><i className="fa fa-envelope-open text-success" onClick={this.handleCheck} name='email'></i></a></li>

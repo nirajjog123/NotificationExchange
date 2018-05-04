@@ -73,7 +73,7 @@ this.setState({msgName:getMsgName})
  <div className="widget-body">
  <div className="stats-row">
  <div className="stat-item">
- <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center"><span className="widget-icon"><i className="fa fa-bell text-primary"></i></span></div></div>
+ <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center"><span className="widget-icon"><i className="fa fa-desktop text-primary"></i></span></div></div>
  <div className="stat-item">
  
  
@@ -104,7 +104,7 @@ this.setState({msgName:getMsgName})
  <div className="widget-body">
  <div className="stats-row">
  <div className="stat-item">
- <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center"><span className="widget-icon"><i className="fa fa-envelope-open text-success"></i></span></div></div>
+ <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center"><span className="widget-icon"><i className="fa fa-commenting text-success"></i></span></div></div>
  <div className="stat-item">
  
  
@@ -169,9 +169,9 @@ this.setState({msgName:getMsgName})
  <div className="list-group list-group-lg">
  <a className="list-group-item" href="#">
  <span className="thumb-sm float-left mx-3 widget-icon">
- <i class="fa fa-envelope-open text-success"></i> 
+ <i class="fa fa-commenting text-success"></i> 
  </span>
- <span className="no-margin">Stock Buy</span>
+ <span className="no-margin">Stock Buyyy</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
  <span className="no-margin" onClick ={this.sendAnalyticData} name="Stock Buy" ><i class="fa fa-pencil text-primary msg-btn" aria-hidden="true"></i></span>
  <span className="no-margin"><i class="fa fa-trash text-orange msg-btn" aria-hidden="true"></i></span>
@@ -202,7 +202,7 @@ this.setState({msgName:getMsgName})
 
  <a className="list-group-item" href="#">
  <span className="thumb-sm float-left mx-3 widget-icon">
- <i class="fa fa-envelope-open text-success"></i> 
+ <i class="fa fa-commenting text-success"></i> 
  </span>
  <span className="no-margin">Stock Sell</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
@@ -213,7 +213,7 @@ this.setState({msgName:getMsgName})
 
  <a className="list-group-item" href="#">
  <span className="thumb-sm float-left mx-3 widget-icon">
- <i class="fa fa-envelope-open text-success"></i> 
+ <i class="fa fa-commenting text-success"></i> 
  </span>
  <span className="no-margin">Divident stocks</span>
  <span className="no-margin"><i class="fa fa-line-chart text-green msg-btn" aria-hidden="true" id="analytics"></i></span>
