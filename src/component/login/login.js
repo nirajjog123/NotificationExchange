@@ -60,13 +60,12 @@ class Login extends Component {
     const { signup } = this.state
     return (
       <div className='login'>
-      <div class="body"></div>
-     
-        <div class="container">
-        
-          <div className="card card-login mx-auto">
-            <div className="card-header bkg-gray">Login</div>
+        <div class="body"></div>
 
+        <div class="container">
+
+          <div className="card card-login mx-auto">
+            <div className="card-header bkg-gray">Login</div>           
 
             <div className="card-body">
               <form onSubmit={this.handleSubmit}>
